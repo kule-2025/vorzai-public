@@ -10,7 +10,7 @@
 
 **[Vorzai 电商 Agent Setup 0.1.1.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.1.1/Vorzai%20电商%20Agent%20Setup%200.1.1.exe)**
 
-- 文件大小：约 85 MB
+- 文件大小：约 81 MB
 - 系统要求：Windows 10/11 (x64)
 - 安装方式：双击运行，按向导完成安装
 
@@ -19,6 +19,31 @@
 如果 GitHub 下载慢，请使用 Gitee 镜像：
 
 **[Gitee 下载页面](https://gitee.com/king2030/vorzai/releases)**
+
+### 下载失败解决方案
+
+如果下载到 80MB 左右中断，请尝试以下方法：
+
+**方法 1：使用下载工具（推荐）**
+- 使用 [IDM](https://www.internetdownloadmanager.com/)、[Free Download Manager](https://www.freedownloadmanager.org/) 或 [aria2](https://aria2.github.io/) 等下载工具
+- 这些工具支持断点续传，即使中断也能从断点继续
+
+**方法 2：浏览器重试**
+- Chrome/Edge：按 `Ctrl+J` 打开下载页，点击失败的任务选择"继续下载"
+- 或使用无痕模式重新下载
+
+**方法 3：命令行下载**
+```bash
+# 使用 curl（支持断点续传）
+curl -L -C - -o Vorzai-Setup-0.1.1.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.1.1/Vorzai-Setup-0.1.1.exe"
+
+# 或使用 wget
+wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.1.1/Vorzai-Setup-0.1.1.exe"
+```
+
+**方法 4：GitHub 加速镜像**
+- 使用 [ghproxy.com](https://ghproxy.com/) 或 [gitclone.com](https://gitclone.com/) 等加速服务
+- 将下载链接中的 `github.com` 替换为加速域名
 
 ## 功能概览
 
