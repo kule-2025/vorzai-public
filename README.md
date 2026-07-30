@@ -1,4 +1,4 @@
-# Vorzai 电商 Agent v0.1.1
+# Vorzai 电商 Agent v0.1.2
 
 > 面向电商企业的人力资源管理与业务解决方案桌面应用
 
@@ -8,7 +8,7 @@
 
 点击下方链接下载安装包：
 
-**[Vorzai 电商 Agent Setup 0.1.1.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.1.1/Vorzai%20电商%20Agent%20Setup%200.1.1.exe)**
+**[Vorzai 电商 Agent Setup 0.1.2.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.1.2/Vorzai-Setup-0.1.2.exe)**
 
 - 文件大小：约 81 MB
 - 系统要求：Windows 10/11 (x64)
@@ -86,7 +86,8 @@ Vorzai 是一款专为电商企业设计的智能桌面助手，覆盖以下核�
 | 版本 | 日期 | 说明 |
 |------|------|------|
 | v0.1.0 | 2026-07-29 | 首个正式版本，全栈实现 |
-| v0.1.1 | 2026-07-29 | 安全修复：租户隔离增强、订单状态机完善、RACI/薪酬UPSERT修复、Token刷新循环修复、自动化安全检测脚本 |
+| v0.1.1 | 2026-07-29 | 安全修复：租户隔离增强、订单状态机完善、RACI/薪酬UPSERT修复、Token刷新循环修复 |
+| v0.1.2 | 2026-07-30 | 修复空白页面：Vite base路径、CSP字体域、后端服务容错 |
 
 ## 反馈与支持
 
