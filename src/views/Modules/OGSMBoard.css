@@ -1,0 +1,75 @@
+/** OGSM 看板样式 */
+
+.ogsm-board {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+}
+
+/* 顶部统计卡片 Grid */
+.ogsm-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.ogsm-stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all var(--transition-fast);
+}
+
+.ogsm-stat-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-1px);
+}
+
+.ogsm-stat-card .stat-label {
+  font-size: var(--font-size-xs);
+  color: var(--text-stat-label);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.ogsm-stat-card .stat-number {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--text-stat-number);
+  line-height: 1.1;
+}
+
+/* RACI 角色徽标 */
+.raci-badge {
+  display: inline-block;
+  min-width: 22px;
+  height: 20px;
+  border-radius: var(--radius-pill);
+  font-size: 10px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  line-height: 20px;
+  padding: 0 6px;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+.raci-badge.R { background: var(--module-agent); }
+.raci-badge.A { background: var(--ecom-blue-500); }
+.raci-badge.C { background: var(--ecom-violet-500); }
+.raci-badge.I { background: var(--text-muted); }
+
+/* 响应式：窄屏下统计卡片降为 4 列 */
+@media (max-width: 960px) {
+  .ogsm-stat-grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 600px) {
+  .ogsm-stat-grid { grid-template-columns: repeat(2, 1fr); }
+}

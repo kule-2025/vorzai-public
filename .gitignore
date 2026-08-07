@@ -1,0 +1,71 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+release/
+release-new/
+server/dist/
+
+# Runtime DB backups
+backups/
+
+# Runtime data
+data/
+logs/
+
+# Workspace
+.workbuddy/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Secrets
+*.key
+*.pem
+.updater-keys/
+.jwt_secret
+
+# Electron
+electron-builder/
+
+# Coverage
+coverage/
+
+# Test outputs
+test-results/
+playwright-report/
+.env
+release-0.2.3/
+release-new/
+release-tmp/
+release-v023/
+release-v023-builder.json
+release-0.2.3-builder.json
+release-new-builder.json
+nul
+
+release-v024/
+
+release-*/
+release-v*/
+*.exe
+builder-debug.yml
+win-unpacked/

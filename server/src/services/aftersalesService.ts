@@ -1,0 +1,52 @@
+/**
+ * 售后闭环 + 客户分层服务 (C1/C2/C3)
+ */
+
+import { getDatabase, transaction } from '../db';
+import { v4 as uuidv4 } from 'uuid';
+import { logger } from '../utils/logger';
+
+export interface ReturnRequest { id: string; tenant_id: string; ticket_id: string | null; order_id: string | null; return_no: string; status: string; reason: string | null; return_items: { productId?: string; sku?: string; name?: string; quantity: number; unitPrice: number }[]; refund_amount: number; refund_method: string; approved_by: string | null; approved_at: string | null; received_at: string | null; refunded_at: string | null; note: string | null; created_by: string | null; created_at: string; updated_at: string; }
+export interface CustomerTag { id: string; tenant_id: string; customer_id: string; customer_name: string | null; tag: string; category: string; score: number; source: string; created_at: string; }
+export interface ConversionAnalysis { funnel: { stage: string; count: number; rate: number; dropRate: number }[]; breakpoints: { stage: string; dropRate: number; suggestion: string }[]; overallConversion: number; }
+
+export class AftersalesService {
+  // ═══ C1 ═══════════════════════════════════════════════
+  createReturn(tenantId: string, createdBy: string, input: { ticketId?: string; orderId?: string; reason?: string; returnItems: { productId?: string; sku?: string; name?: string; quantity: number; unitPrice: number }[]; refundAmount?: number; note?: string }): ReturnRequest {
+    const db = getDatabase(); const id = uuidv4(); const returnNo = `RET-${Date.now()}-${id.slice(0, 6)}`; const amount = input.refundAmount ?? input.returnItems.reduce((s, i) => s + i.quantity * i.unitPrice, 0);
+    transaction(() => { db.prepare(`INSERT INTO return_requests (id, tenant_id, ticket_id, order_id, return_no, reason, return_items, refund_amount, created_by) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`).run(id, tenantId, input.ticketId ?? null, input.orderId ?? null, returnNo, input.reason ?? null, JSON.stringify(input.returnItems), amount, createdBy); });
+    return this.getReturn(id, tenantId)!;
+  }
+  getReturn(id: string, tenantId: string): ReturnRequest | null { const db = getDatabase(); const row = db.prepare('SELECT * FROM return_requests WHERE id = ? AND tenant_id = ?').get(id, tenantId) as any; return row ? { ...row, return_items: typeof row.return_items === 'string' ? JSON.parse(row.return_items) : (row.return_items ?? []) } : null; }
+  listReturns(tenantId: string, opts: { status?: string; orderId?: string } = {}): ReturnRequest[] { const db = getDatabase(); const w: string[] = ['r.tenant_id = ?']; const p: unknown[] = [tenantId]; if (opts.status) { w.push('r.status = ?'); p.push(opts.status); } if (opts.orderId) { w.push('r.order_id = ?'); p.push(opts.orderId); } return (db.prepare(`SELECT r.* FROM return_requests r WHERE ${w.join(' AND ')} ORDER BY r.created_at DESC LIMIT 200`).all(...p) as any[]).map((r: any) => ({ ...r, return_items: typeof r.return_items === 'string' ? JSON.parse(r.return_items) : (r.return_items ?? []) })); }
+
+  approveReturn(id: string, tenantId: string, approvedBy: string, note?: string): ReturnRequest | null { const db = getDatabase(); const r = db.prepare('SELECT id, status FROM return_requests WHERE id = ? AND tenant_id = ?').get(id, tenantId) as any; if (!r || r.status !== 'pending') return null; transaction(() => { db.prepare("UPDATE return_requests SET status = 'approved', approved_by = ?, approved_at = datetime('now'), note = COALESCE(?, note), updated_at = datetime('now') WHERE id = ?").run(approvedBy, note ?? null, id); const t = db.prepare('SELECT ticket_id FROM return_requests WHERE id = ?').get(id) as any; if (t?.ticket_id) db.prepare("UPDATE service_tickets SET status = 'in_progress', updated_at = datetime('now') WHERE id = ?").run(t.ticket_id); }); return this.getReturn(id, tenantId); }
+  rejectReturn(id: string, tenantId: string, note?: string): ReturnRequest | null { const db = getDatabase(); const r = db.prepare('SELECT id, status FROM return_requests WHERE id = ? AND tenant_id = ?').get(id, tenantId) as any; if (!r || r.status !== 'pending') return null; db.prepare("UPDATE return_requests SET status = 'rejected', note = COALESCE(?, note), updated_at = datetime('now') WHERE id = ?").run(note ?? null, id); return this.getReturn(id, tenantId); }
+
+  receiveReturn(id: string, tenantId: string, operatorId: string): ReturnRequest | null {
+    const db = getDatabase(); const ret = this.getReturn(id, tenantId); if (!ret || ret.status !== 'approved' || !ret.order_id) return null;
+    transaction(() => { for (const item of ret.return_items) { if (!item.productId) continue; const product = db.prepare('SELECT id, stock FROM products WHERE id = ? AND tenant_id = ?').get(item.productId, tenantId) as any; if (!product) continue; db.prepare(`INSERT INTO stock_transactions (id, tenant_id, product_id, product_sku, product_name, txn_type, quantity, stock_before, stock_after, unit_cost, ref_type, ref_id, operator_id) VALUES (?, ?, ?, ?, ?, 'return_in', ?, ?, ?, ?, 'return', ?, ?)`).run(uuidv4(), tenantId, item.productId, item.sku ?? null, item.name ?? null, item.quantity, product.stock, product.stock + item.quantity, item.unitPrice ?? 0, id, operatorId); db.prepare("UPDATE products SET stock = stock + ?, updated_at = datetime('now') WHERE id = ?").run(item.quantity, item.productId); } db.prepare("UPDATE return_requests SET status = 'received', received_at = datetime('now'), updated_at = datetime('now') WHERE id = ?").run(id); });
+    logger.info('aftersales', `退货入库: ${id}`); return this.getReturn(id, tenantId);
+  }
+  processRefund(id: string, tenantId: string): ReturnRequest | null { const db = getDatabase(); const ret = this.getReturn(id, tenantId); if (!ret || ret.status !== 'received' || !ret.order_id) return null; transaction(() => { const order = db.prepare('SELECT id, paid_amount, payment_status FROM orders WHERE id = ? AND tenant_id = ?').get(ret.order_id, tenantId) as any; if (order && order.payment_status === 'paid') db.prepare("UPDATE orders SET payment_status = 'refunded', updated_at = datetime('now') WHERE id = ?").run(ret.order_id); db.prepare("UPDATE return_requests SET status = 'refunded', refunded_at = datetime('now'), updated_at = datetime('now') WHERE id = ?").run(id); }); return this.getReturn(id, tenantId); }
+
+  // ═══ C2 ═══════════════════════════════════════════════
+  addTag(tenantId: string, input: { customerId: string; customerName?: string; tag: string; category?: string; score?: number; source?: string }): CustomerTag { const db = getDatabase(); const id = uuidv4(); db.prepare(`INSERT OR REPLACE INTO customer_tags (id, tenant_id, customer_id, customer_name, tag, category, score, source) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`).run(id, tenantId, input.customerId, input.customerName ?? null, input.tag, input.category ?? 'behavior', input.score ?? 0, input.source ?? 'manual'); return db.prepare('SELECT * FROM customer_tags WHERE id = ?').get(id) as CustomerTag; }
+  listTags(tenantId: string, customerId?: string): CustomerTag[] { const db = getDatabase(); if (customerId) return db.prepare('SELECT * FROM customer_tags WHERE tenant_id = ? AND customer_id = ? ORDER BY category, tag').all(tenantId, customerId) as CustomerTag[]; return db.prepare('SELECT * FROM customer_tags WHERE tenant_id = ? ORDER BY customer_id, category, tag').all(tenantId) as CustomerTag[]; }
+  removeTag(id: string, tenantId: string): boolean { const db = getDatabase(); const r = db.prepare('DELETE FROM customer_tags WHERE id = ? AND tenant_id = ?').run(id, tenantId); return (r as { changes: number }).changes > 0; }
+  getCustomerSegments(tenantId: string): { tag: string; count: number; customers: string[] }[] { const db = getDatabase(); const rows = db.prepare('SELECT tag, customer_id, customer_name FROM customer_tags WHERE tenant_id = ? ORDER BY tag').all(tenantId) as { tag: string; customer_id: string; customer_name: string | null }[]; const groups = new Map<string, { count: number; customers: string[] }>(); rows.forEach((r) => { if (!groups.has(r.tag)) groups.set(r.tag, { count: 0, customers: [] }); groups.get(r.tag)!.count++; if (r.customer_name) groups.get(r.tag)!.customers.push(r.customer_name); }); return Array.from(groups.entries()).map(([tag, v]) => ({ tag, count: v.count, customers: v.customers.slice(0, 10) })); }
+
+  // ═══ C3 ═══════════════════════════════════════════════
+  analyzeConversion(tenantId: string, from: string, to: string): ConversionAnalysis {
+    const db = getDatabase(); const rows = db.prepare(`SELECT order_status, payment_status, COUNT(*) as c FROM orders WHERE tenant_id = ? AND created_at BETWEEN ? AND ? GROUP BY order_status, payment_status`).all(tenantId, from, to + ' 23:59:59') as { order_status: string; payment_status: string; c: number }[];
+    const m = (r: { order_status: string; payment_status: string }) => true;
+    const stages = [{ stage: '创建订单', m }, { stage: '确认订单', m: (r: any) => !['pending'].includes(r.order_status) }, { stage: '已支付', m: (r: any) => ['paid','partial','refunded'].includes(r.payment_status) }, { stage: '已发货', m: (r: any) => ['shipped','delivered','completed'].includes(r.order_status) }, { stage: '已签收', m: (r: any) => ['delivered','completed'].includes(r.order_status) }, { stage: '已完成', m: (r: any) => r.order_status === 'completed' }];
+    const counts = stages.map((s) => ({ stage: s.stage, count: rows.filter((r) => s.m(r)).reduce((sum, r) => sum + r.c, 0) }));
+    const total = counts[0].count; const funnel = counts.map((s, i) => { const rate = total > 0 ? Math.round((s.count / total) * 1000) / 10 : 0; const prevCount = i > 0 ? counts[i - 1].count : s.count; const dropRate = prevCount > 0 ? Math.round((1 - s.count / prevCount) * 1000) / 10 : 0; return { ...s, rate, dropRate }; });
+    const suggestions: Record<string, string> = { '创建订单': '检查流量来源和商品页转化', '确认订单': '优化结算页、减少步骤数', '已支付': '后台自动审核，开启自动确认', '已发货': '接入物流追踪、优化配货', '已签收': '自动触发评价邀请+复购优惠券', '已完成': '发送感谢信和会员升级提示' };
+    const breakpoints = funnel.filter((f) => f.dropRate > 15).map((f) => ({ stage: f.stage, dropRate: f.dropRate, suggestion: suggestions[f.stage] || '针对性优化' }));
+    return { funnel, breakpoints, overallConversion: funnel[funnel.length - 1].rate };
+  }
+}
+
+export const aftersalesService = new AftersalesService();
