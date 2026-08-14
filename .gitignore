@@ -40,7 +40,7 @@ npm-debug.log*
 # Secrets
 *.key
 *.pem
-.updater-keys/
+.update-keys/
 .jwt_secret
 
 # Electron
@@ -57,15 +57,11 @@ release-0.2.3/
 release-new/
 release-tmp/
 release-v023/
-release-v023-builder.json
-release-0.2.3-builder.json
-release-new-builder.json
-nul
+release-v023-fix/
 
-release-v024/
-
-release-*/
-release-v*/
-*.exe
-builder-debug.yml
+# Release packages (keep only in GitHub Releases, not in repo)
+release-*.exe
+*.blockmap
+*.yml
 win-unpacked/
+builder-debug.yml
