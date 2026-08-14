@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="Vorzai">
+  <defs>
+    <linearGradient id="vzAmber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FBBF24"/>
+      <stop offset="1" stop-color="#D97706"/>
+    </linearGradient>
+    <clipPath id="vzTile"><rect x="0" y="0" width="1024" height="1024" rx="224" ry="224"/></clipPath>
+  </defs>
+  <g clip-path="url(#vzTile)">
+    <rect width="1024" height="1024" fill="url(#vzAmber)"/>
+    <path d="M0 0 H1024 V320 Q512 470 0 320 Z" fill="#FFFFFF" opacity="0.10"/>
+  </g>
+  <path d="M612 704 L740 452 L868 704" fill="none" stroke="#FDE68A" stroke-width="104" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M300 762 L512 300 L724 762" fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="484" y="258" width="56" height="56" rx="10" transform="rotate(45 512 286)" fill="#FDE68A"/>
+</svg>
