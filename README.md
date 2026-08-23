@@ -6,7 +6,7 @@
 
 **核心理念**：不是 HR 管业务，而是 HR 洞察 × 业务数据双引擎驱动增长。
 
-[![Version](https://img.shields.io/badge/version-0.2.24-blue.svg)](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.24)
+[![Version](https://img.shields.io/badge/version-0.2.27-blue.svg)](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.27)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](#)
 [![Tests](https://img.shields.io/badge/tests-708%20passed-brightgreen.svg)](#)
@@ -20,7 +20,7 @@
 
 ### 下载安装
 
-**Windows**: [下载最新安装包 (v0.2.24)](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.24/vorzai-ecommerce.Setup.0.2.24.exe) (SHA512 见 Release 页面摘要文件)
+**Windows**: [下载最新安装包 (v0.2.27)](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.27/vorzai-ecommerce%20Setup%200.2.27.exe) (SHA512 见 Release 页面摘要文件)
 
 **macOS/Linux**: [查看所有 Release 版本](https://github.com/kule-2025/vorzai-public/releases)
 
@@ -32,9 +32,9 @@
 
 | 源 | 状态 | 下载地址 |
 |---|------|---------|
-| **GitHub（主源）** | ✅ 正常（安装包托管） | [Releases · v0.2.24](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.24) |
+| **GitHub（主源）** | ✅ 正常（安装包托管） | [Releases · v0.2.27](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.27) |
 | **Gitee raw（回退源 1）** | ✅ 元数据回退，注入主源直链 | `gitee.com/king2030/vorzai/raw/main/latest.yml` |
-| **Gitee Release API（回退源 2）** | ✅ 版本元数据三级回退 | `gitee.com/api/v5/repos/king2030/vorzai/releases/tags/v0.2.24` |
+| **Gitee Release API（回退源 2）** | ✅ 版本元数据三级回退 | `gitee.com/api/v5/repos/king2030/vorzai/releases/tags/v0.2.27` |
 
 > 客户端按 `GitHub Release → Gitee raw → Gitee API` 三级依次尝试，任一成功即完成更新。
 
@@ -156,9 +156,9 @@ npm run lint          # ESLint
 node scripts/local-ci.mjs --publish
 
 # 或分阶段发布（CI 已完成构建后补发 Release 资产）
-node scripts/release/publish-github.mjs --version 0.2.24 --dir release
-node scripts/release/publish-gitee.mjs  --version 0.2.24 --download-url "<github url>" --dir release
-node scripts/verify-dual-source.mjs     --version 0.2.24
+node scripts/release/publish-github.mjs --version 0.2.27 --dir release
+node scripts/release/publish-gitee.mjs  --version 0.2.27 --download-url "<github url>" --dir release
+node scripts/verify-dual-source.mjs     --version 0.2.27
 ```
 
 详细发布流程与降级策略见 [双源部署 SOP](docs/dual-source-deployment-sop.md)。
@@ -194,6 +194,34 @@ node scripts/verify-dual-source.mjs     --version 0.2.24
 ---
 
 ## 📝 更新日志
+
+### v0.2.27（2026-08-23）
+
+**生产级全功能键审计与多角色专家团修复（Phase J 交付）：**
+
+- **功能键交互闭环修复（P0）**：
+  - `GET /business/products/:id` 商品详情路由缺失 → 新增路由，消除 404
+  - HR 模块 3 处 `datetime("now")` 双引号→单引号，修复 `PUT /hr/policies|incentives|pilots/:id` 500（根因：SQLite 将双引号字符串解析为列名）
+  - `PUT /business/tickets/:id/escalate` 升级工单 500 → `status='escalated'` 违反 CHECK 约束 + `escalate_reason` 列不存在，改为 `priority='urgent'` 并将升级原因追加至 description，保留原状态
+- **安全加固（延续 Phase J）**：Owner 自删除 SQL 双引号修复、Admin 密码 bcrypt 哈希、Admin 自提权拦截、Workflow 创建 RBAC 守卫、JSON fallback 无 WHERE fail-fast
+- **回归验证**：vitest 708/708 全绿（server 529 + renderer 179），TSC 前后端 0 错误
+
+### v0.2.26（2026-08-22）
+
+**登录态闭环与 LLM 卡片重设计（多角色专家团交付）：**
+
+- **登录态与登出闭环（会话失效强制回登录页）**：
+  - `api/client.ts`：重构 401 处理——令牌刷新失败 / 无刷新令牌时清理本地会话并回调登出，消除「假登录态反复 401」；新增 `translateAuthError` 将后端技术性报错（已过期 / 已撤销 / 无效 / 缺少）翻译为用户可读文案
+  - `App.tsx`：订阅 `auth:session-expired` 事件，令牌失效时强制回到登录页
+  - `appStore.ts`：`logout()` 结束广播 `auth:session-expired`；模块加载时注册 `setAuthFailureHandler`，令牌无法恢复即清理用户态并广播会话过期
+  - `electron/main.js`：主进程菜单新增「退出登录」项（`menu:logout`）；`AppLayout` 接住该事件调用 `logout`
+  - `Sidebar.tsx`：用户区新增「退出登录」按钮；头像 / 名称 fallback 改进（`email` 首字母 / 「未命名用户」）
+  - `AuthView.tsx`：用户名 fallback 改进（displayName -> username -> name -> 邮箱前缀 -> 「未命名用户」）
+- **多租户本地化（#412）**：`plan` 代码本地化为「免费版 / 专业版 / 团队版 / 商业版 / 企业版」标签；「套餐」改为「当前版本」；「资源限制」改为「容量规划」，明确本地存储产品无云端存储额度与 API 调用计费限制，移除存储空间 / API 调用量展示
+- **LLM 平台文案与卡片重设计（#413 / #403 N4）**：
+  - `describeLlmError()` 本地化连接测试错误（401 / 无效密钥 / 模型不存在 / 连接失败 / 限额），替代原技术性原始报错
+  - `ModelCard` 视觉重设计：激活态改用品牌琥珀金描边 + 光晕；模型列表改为可换行 chip（前 3 个 + 「+N」）；移除堆叠的 Base URL + 模型明细大块，信息层级收敛、减少页面占用，对齐品牌调性
+- **测试**：TSC 前后端 0 错误
 
 ### v0.2.24（2026-08-21）
 
