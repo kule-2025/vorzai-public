@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="Vorzai" fill="none">
-  <g stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M612 704 L740 452 L868 704" stroke-width="104"/>
-    <path d="M300 762 L512 300 L724 762" stroke-width="150"/>
-  </g>
-  <rect x="484" y="258" width="56" height="56" rx="10" transform="rotate(45 512 286)" fill="#FFFFFF" stroke="none"/>
-</svg>
