@@ -6,7 +6,7 @@
 
 **核心理念**：不是 HR 管业务，而是 HR 洞察 × 业务数据双引擎驱动增长。
 
-[![Version](https://img.shields.io/badge/version-0.2.27-blue.svg)](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.27)
+[![Version](https://img.shields.io/badge/version-0.2.41-blue.svg)](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.41)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](#)
 [![Tests](https://img.shields.io/badge/tests-708%20passed-brightgreen.svg)](#)
@@ -20,7 +20,7 @@
 
 ### 下载安装
 
-**Windows**: [下载最新安装包 (v0.2.27)](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.27/vorzai-ecommerce%20Setup%200.2.27.exe) (SHA512 见 Release 页面摘要文件)
+**Windows**: [下载最新安装包 (v0.2.41)](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.41/vorzai-ecommerce%20Setup%200.2.41.exe) (SHA512 见 Release 页面摘要文件)
 
 **macOS/Linux**: [查看所有 Release 版本](https://github.com/kule-2025/vorzai-public/releases)
 
@@ -32,9 +32,9 @@
 
 | 源 | 状态 | 下载地址 |
 |---|------|---------|
-| **GitHub（主源）** | ✅ 正常（安装包托管） | [Releases · v0.2.27](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.27) |
+| **GitHub（主源）** | ✅ 正常（安装包托管） | [Releases · v0.2.41](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.41) |
 | **Gitee raw（回退源 1）** | ✅ 元数据回退，注入主源直链 | `gitee.com/king2030/vorzai/raw/main/latest.yml` |
-| **Gitee Release API（回退源 2）** | ✅ 版本元数据三级回退 | `gitee.com/api/v5/repos/king2030/vorzai/releases/tags/v0.2.27` |
+| **Gitee Release API（回退源 2）** | ✅ 版本元数据三级回退 | `gitee.com/api/v5/repos/king2030/vorzai/releases/tags/v0.2.41` |
 
 > 客户端按 `GitHub Release → Gitee raw → Gitee API` 三级依次尝试，任一成功即完成更新。
 
@@ -194,6 +194,18 @@ node scripts/verify-dual-source.mjs     --version 0.2.27
 ---
 
 ## 📝 更新日志
+
+### v0.2.41（2026-08-28）
+
+**P0四项任务闭环与应用内更新体验优化（多角色专家团交付）：**
+
+- **P0-1 全局合规扫描**：全量扫描应用代码，确认无 workbuddy/trae/windsurf 等第三方名称残留，100% 原创品牌表述
+- **P0-2 历史会话持久化修复**：修复 `loadConversations` 字段映射（snake_case→camelCase），修复 `loadConversationMessages` 时间戳映射，发送消息后自动刷新会话列表，对话内容完整留存恢复
+- **P0-3 模型双向同步**：对话框模型选择器新增从大模型平台（`api.llm.list()`）同步配置模型，去重合并默认+平台+自定义模型，大模型平台配置即时生效
+- **P0-4 对话框自定义模型**：对话框内支持添加/删除自定义模型（API端点+Key），保存到 localStorage 持久化，与大模型平台模型合并展示
+- **关于页面侵权表述修复**：移除"对标钉钉账号权限"等侵权表述，改为原创"全链路账号权限管理 + 多平台协作连接器预留"
+- **应用内更新超时优化**：更新请求超时从 20s 提升至 60s，改善弱网环境下 GitHub Release 访问体验，双源三级回退（GitHub→Gitee raw→Gitee API）保持生效
+- **双源部署方法论升级**：新增最高执行规则第一条——每次版本发布必须同步更新 GitHub 和 Gitee 双仓库 README，版本号与下载链接强制对齐
 
 ### v0.2.27（2026-08-23）
 
@@ -371,3 +383,4 @@ node scripts/verify-dual-source.mjs     --version 0.2.27
 **Made with ❤️ by Vorzai Team**
 
 </div>
+
