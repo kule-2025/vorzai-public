@@ -6,7 +6,7 @@
 
 **核心理念**：不是 HR 管业务，而是 HR 洞察 × 业务数据双引擎驱动增长。
 
-[![Version](https://img.shields.io/badge/version-0.2.42-blue.svg)](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.42)
+[![Version](https://img.shields.io/badge/version-0.2.43-blue.svg)](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.43)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](#)
 [![Tests](https://img.shields.io/badge/tests-708%20passed-brightgreen.svg)](#)
@@ -20,7 +20,7 @@
 
 ### 下载安装
 
-**Windows**: [下载最新安装包 (v0.2.42)](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.42/vorzai-ecommerce%20Setup%200.2.42.exe) (SHA512 见 Release 页面摘要文件)
+**Windows**: [下载最新安装包 (v0.2.43)](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.43/vorzai-ecommerce%20Setup%200.2.43.exe) (SHA512 见 Release 页面摘要文件)
 
 **macOS/Linux**: [查看所有 Release 版本](https://github.com/kule-2025/vorzai-public/releases)
 
@@ -32,9 +32,9 @@
 
 | 源 | 状态 | 下载地址 |
 |---|------|---------|
-| **GitHub（主源）** | ✅ 正常（安装包托管） | [Releases · v0.2.42](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.42) |
+| **GitHub（主源）** | ✅ 正常（安装包托管） | [Releases · v0.2.43](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.43) |
 | **Gitee raw（回退源 1）** | ✅ 元数据回退，注入主源直链 | `gitee.com/king2030/vorzai/raw/main/latest.yml` |
-| **Gitee Release API（回退源 2）** | ✅ 版本元数据三级回退 | `gitee.com/api/v5/repos/king2030/vorzai/releases/tags/v0.2.42` |
+| **Gitee Release API（回退源 2）** | ✅ 版本元数据三级回退 | `gitee.com/api/v5/repos/king2030/vorzai/releases/tags/v0.2.43` |
 
 > 客户端按 `GitHub Release → Gitee raw → Gitee API` 三级依次尝试，任一成功即完成更新。
 
@@ -194,6 +194,16 @@ node scripts/verify-dual-source.mjs     --version 0.2.27
 ---
 
 ## 📝 更新日志
+
+### v0.2.43（2026-08-28）
+
+**P1业务闭环CRUD补全（财务中心）：**
+
+- **财务中心-交易流水新增功能**：新增交易记录模态框（日期/类型/分类/金额/描述/关联单号），支持收入/支出类型，表单校验必填项
+- **财务中心-交易流水导出功能**：支持导出当前筛选结果为CSV文件（含BOM头，Excel兼容中文）
+- **后端API补全**：新增 `POST /api/finance/transactions` 路由，支持新增交易记录，含参数校验和租户隔离
+- **前端API补全**：`api.finance.createTransaction()` 方法添加，完整前后端链路打通
+- **P1业务闭环审计启动**：覆盖左侧导航栏全部子功能，优先补全缺少交互编辑页（CRUD、导入导出、保存）的子功能
 
 ### v0.2.42（2026-08-28）
 
@@ -392,5 +402,6 @@ node scripts/verify-dual-source.mjs     --version 0.2.27
 **Made with ❤️ by Vorzai Team**
 
 </div>
+
 
 
