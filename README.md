@@ -6,7 +6,7 @@
 
 **核心理念**：不是 HR 管业务，而是 HR 洞察 × 业务数据双引擎驱动增长。
 
-[![Version](https://img.shields.io/badge/version-0.2.45-blue.svg)](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.45)
+[![Version](https://img.shields.io/badge/version-0.2.46-blue.svg)](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.46)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](#)
 [![Tests](https://img.shields.io/badge/tests-708%20passed-brightgreen.svg)](#)
@@ -20,7 +20,7 @@
 
 ### 下载安装
 
-**Windows**: [下载最新安装包 (v0.2.45)](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.45/vorzai-ecommerce%20Setup%200.2.45.exe) (SHA512 见 Release 页面摘要文件)
+**Windows**: [下载最新安装包 (v0.2.46)](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.46/vorzai-ecommerce%20Setup%200.2.46.exe) (SHA512 见 Release 页面摘要文件)
 
 **macOS/Linux**: [查看所有 Release 版本](https://github.com/kule-2025/vorzai-public/releases)
 
@@ -32,9 +32,9 @@
 
 | 源 | 状态 | 下载地址 |
 |---|------|---------|
-| **GitHub（主源）** | ✅ 正常（安装包托管） | [Releases · v0.2.45](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.45) |
+| **GitHub（主源）** | ✅ 正常（安装包托管） | [Releases · v0.2.46](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.46) |
 | **Gitee raw（回退源 1）** | ✅ 元数据回退，注入主源直链 | `gitee.com/king2030/vorzai/raw/main/latest.yml` |
-| **Gitee Release API（回退源 2）** | ✅ 版本元数据三级回退 | `gitee.com/api/v5/repos/king2030/vorzai/releases/tags/v0.2.45` |
+| **Gitee Release API（回退源 2）** | ✅ 版本元数据三级回退 | `gitee.com/api/v5/repos/king2030/vorzai/releases/tags/v0.2.46` |
 
 > 客户端按 `GitHub Release → Gitee raw → Gitee API` 三级依次尝试，任一成功即完成更新。
 
@@ -194,6 +194,19 @@ node scripts/verify-dual-source.mjs     --version 0.2.27
 ---
 
 ## 📝 更新日志
+
+### v0.2.46（2026-08-28）
+
+**模型配置编辑与财务中心CRUD增强：**
+
+- **模型选择器新增编辑功能（P0）**：每个自定义模型/平台模型新增✎编辑按钮，点击弹出编辑弹窗，可修改模型名称、提供商、API端点（Base URL）、API Key；平台模型调用后端`PUT /api/llm/:id`更新，自定义模型更新localStorage
+- **选中模型持久化**：用户选中的模型列表存储到localStorage（`vorzai_selected_models`），应用重启/版本更新后自动恢复选中状态，不再每次重置为默认模型
+- **财务中心交易流水CRUD补全**：
+  - 新增编辑功能（修改日期/类型/分类/描述/关联单号/金额）
+  - 新增删除功能（带确认弹窗）
+  - 新增详情查看弹窗（完整展示交易ID、创建时间等所有字段）
+  - 表格新增操作列（查看/编辑/删除）
+  - API新增`updateTransaction`和`deleteTransaction`方法
 
 ### v0.2.45（2026-08-28）
 
@@ -425,6 +438,7 @@ node scripts/verify-dual-source.mjs     --version 0.2.27
 **Made with ❤️ by Vorzai Team**
 
 </div>
+
 
 
 
