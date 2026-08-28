@@ -6,7 +6,7 @@
 
 **核心理念**：不是 HR 管业务，而是 HR 洞察 × 业务数据双引擎驱动增长。
 
-[![Version](https://img.shields.io/badge/version-0.2.47-blue.svg)](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.47)
+[![Version](https://img.shields.io/badge/version-0.2.48-blue.svg)](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.48)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](#)
 [![Tests](https://img.shields.io/badge/tests-708%20passed-brightgreen.svg)](#)
@@ -20,7 +20,7 @@
 
 ### 下载安装
 
-**Windows**: [下载最新安装包 (v0.2.47)](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.47/vorzai-ecommerce%20Setup%200.2.47.exe) (SHA512 见 Release 页面摘要文件)
+**Windows**: [下载最新安装包 (v0.2.48)](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.48/vorzai-ecommerce%20Setup%200.2.48.exe) (SHA512 见 Release 页面摘要文件)
 
 **macOS/Linux**: [查看所有 Release 版本](https://github.com/kule-2025/vorzai-public/releases)
 
@@ -32,9 +32,9 @@
 
 | 源 | 状态 | 下载地址 |
 |---|------|---------|
-| **GitHub（主源）** | ✅ 正常（安装包托管） | [Releases · v0.2.47](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.47) |
+| **GitHub（主源）** | ✅ 正常（安装包托管） | [Releases · v0.2.48](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.48) |
 | **Gitee raw（回退源 1）** | ✅ 元数据回退，注入主源直链 | `gitee.com/king2030/vorzai/raw/main/latest.yml` |
-| **Gitee Release API（回退源 2）** | ✅ 版本元数据三级回退 | `gitee.com/api/v5/repos/king2030/vorzai/releases/tags/v0.2.47` |
+| **Gitee Release API（回退源 2）** | ✅ 版本元数据三级回退 | `gitee.com/api/v5/repos/king2030/vorzai/releases/tags/v0.2.48` |
 
 > 客户端按 `GitHub Release → Gitee raw → Gitee API` 三级依次尝试，任一成功即完成更新。
 
@@ -194,6 +194,37 @@ node scripts/verify-dual-source.mjs     --version 0.2.27
 ---
 
 ## 📝 更新日志
+
+### v0.2.48（2026-08-28）— P1业务闭环大版本迭代
+
+**P1 业务闭环 CRUD 全量补全与对话框样式优化：**
+
+- **转化与运营 — 客户标签CRUD补全**：
+  - 新增手动添加客户标签功能（客户ID/名称/标签/分类/评分）
+  - 新增删除客户标签功能（带确认弹窗）
+  - 标签分类支持：行为/人口/价值/风险/自定义
+  - 对接后端 `POST /api/business/customer-tags` 和 `DELETE /api/business/customer-tags/:id`
+
+- **对话框样式优化（对齐品牌调性）**：
+  - 发送按钮：品牌色渐变背景（橙色系），圆角8px，悬停上浮效果，阴影增强
+  - 语音按钮：录音状态红色脉冲动画，悬停品牌色高亮
+  - 模型选择器：选中状态品牌色高亮，下拉菜单样式统一
+  - 整体工具栏：间距、圆角、过渡动画统一优化
+
+- **P1业务闭环页面状态确认（全量排查）**：
+  - ✅ 增长引擎：营销活动CRUD完整（创建/编辑/删除/启用暂停）
+  - ✅ 数据分析：报表导出功能完整
+  - ✅ 工作流编排：CRUD完整（创建/编辑/删除/启用禁用/归档/运行）
+  - ✅ 大模型平台：CRUD完整（添加/编辑/删除/连通性测试）
+  - ✅ 数据导入导出：批量导入/导出/字段映射/校验完整
+  - ✅ 系统设置：配置保存/重置/多租户管理完整
+  - ✅ 绩效评分：评分保存/删除/导出/导入/历史记录完整
+  - ✅ 调休管理：加班申请/调休申请/审批流/额度管理完整
+  - ✅ 全员OA：审批流CRUD/表单配置完整
+  - ✅ 平台集成：连接器CRUD/授权配置/状态监控完整
+  - ✅ HR智能：洞察分析/方案导出/执行方案生成完整
+  - ✅ 财务中心：交易流水CRUD（新增/编辑/删除/详情/导出/筛选）
+  - ✅ 审计日志：列表/筛选/导出/单条删除/详情完整
 
 ### v0.2.47（2026-08-28）
 
@@ -448,6 +479,7 @@ node scripts/verify-dual-source.mjs     --version 0.2.27
 **Made with ❤️ by Vorzai Team**
 
 </div>
+
 
 
 
