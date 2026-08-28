@@ -6,7 +6,7 @@
 
 **核心理念**：不是 HR 管业务，而是 HR 洞察 × 业务数据双引擎驱动增长。
 
-[![Version](https://img.shields.io/badge/version-0.2.46-blue.svg)](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.46)
+[![Version](https://img.shields.io/badge/version-0.2.47-blue.svg)](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.47)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](#)
 [![Tests](https://img.shields.io/badge/tests-708%20passed-brightgreen.svg)](#)
@@ -20,7 +20,7 @@
 
 ### 下载安装
 
-**Windows**: [下载最新安装包 (v0.2.46)](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.46/vorzai-ecommerce%20Setup%200.2.46.exe) (SHA512 见 Release 页面摘要文件)
+**Windows**: [下载最新安装包 (v0.2.47)](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.47/vorzai-ecommerce%20Setup%200.2.47.exe) (SHA512 见 Release 页面摘要文件)
 
 **macOS/Linux**: [查看所有 Release 版本](https://github.com/kule-2025/vorzai-public/releases)
 
@@ -32,9 +32,9 @@
 
 | 源 | 状态 | 下载地址 |
 |---|------|---------|
-| **GitHub（主源）** | ✅ 正常（安装包托管） | [Releases · v0.2.46](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.46) |
+| **GitHub（主源）** | ✅ 正常（安装包托管） | [Releases · v0.2.47](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.47) |
 | **Gitee raw（回退源 1）** | ✅ 元数据回退，注入主源直链 | `gitee.com/king2030/vorzai/raw/main/latest.yml` |
-| **Gitee Release API（回退源 2）** | ✅ 版本元数据三级回退 | `gitee.com/api/v5/repos/king2030/vorzai/releases/tags/v0.2.46` |
+| **Gitee Release API（回退源 2）** | ✅ 版本元数据三级回退 | `gitee.com/api/v5/repos/king2030/vorzai/releases/tags/v0.2.47` |
 
 > 客户端按 `GitHub Release → Gitee raw → Gitee API` 三级依次尝试，任一成功即完成更新。
 
@@ -194,6 +194,16 @@ node scripts/verify-dual-source.mjs     --version 0.2.27
 ---
 
 ## 📝 更新日志
+
+### v0.2.47（2026-08-28）
+
+**P1业务闭环CRUD补全 — 工作流编排：**
+
+- 工作流编排新增 **编辑** 功能（修改名称/描述，内联编辑表单）
+- 工作流编排新增 **删除** 功能（带确认弹窗，调用 `DELETE /api/workflows/:id`）
+- 工作流编排新增 **启用/禁用/归档** 状态切换（调用 `PUT /api/workflows/:id`）
+- 工作流列表项新增操作栏（编辑/启用/禁用/归档/删除），状态徽标实时更新
+- 增长引擎确认已有完整CRUD（创建/编辑/删除/启用暂停活动）
 
 ### v0.2.46（2026-08-28）
 
@@ -438,6 +448,7 @@ node scripts/verify-dual-source.mjs     --version 0.2.27
 **Made with ❤️ by Vorzai Team**
 
 </div>
+
 
 
 
