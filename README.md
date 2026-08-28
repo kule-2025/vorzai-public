@@ -6,7 +6,7 @@
 
 **核心理念**：不是 HR 管业务，而是 HR 洞察 × 业务数据双引擎驱动增长。
 
-[![Version](https://img.shields.io/badge/version-0.2.43-blue.svg)](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.43)
+[![Version](https://img.shields.io/badge/version-0.2.44-blue.svg)](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.44)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](#)
 [![Tests](https://img.shields.io/badge/tests-708%20passed-brightgreen.svg)](#)
@@ -20,7 +20,7 @@
 
 ### 下载安装
 
-**Windows**: [下载最新安装包 (v0.2.43)](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.43/vorzai-ecommerce%20Setup%200.2.43.exe) (SHA512 见 Release 页面摘要文件)
+**Windows**: [下载最新安装包 (v0.2.44)](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.44/vorzai-ecommerce%20Setup%200.2.44.exe) (SHA512 见 Release 页面摘要文件)
 
 **macOS/Linux**: [查看所有 Release 版本](https://github.com/kule-2025/vorzai-public/releases)
 
@@ -32,9 +32,9 @@
 
 | 源 | 状态 | 下载地址 |
 |---|------|---------|
-| **GitHub（主源）** | ✅ 正常（安装包托管） | [Releases · v0.2.43](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.43) |
+| **GitHub（主源）** | ✅ 正常（安装包托管） | [Releases · v0.2.44](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.44) |
 | **Gitee raw（回退源 1）** | ✅ 元数据回退，注入主源直链 | `gitee.com/king2030/vorzai/raw/main/latest.yml` |
-| **Gitee Release API（回退源 2）** | ✅ 版本元数据三级回退 | `gitee.com/api/v5/repos/king2030/vorzai/releases/tags/v0.2.43` |
+| **Gitee Release API（回退源 2）** | ✅ 版本元数据三级回退 | `gitee.com/api/v5/repos/king2030/vorzai/releases/tags/v0.2.44` |
 
 > 客户端按 `GitHub Release → Gitee raw → Gitee API` 三级依次尝试，任一成功即完成更新。
 
@@ -194,6 +194,18 @@ node scripts/verify-dual-source.mjs     --version 0.2.27
 ---
 
 ## 📝 更新日志
+
+### v0.2.44（2026-08-28）
+
+**P1业务闭环CRUD补全（业务洞察-业绩倍增实验室）：**
+
+- **业务洞察-业绩倍增实验室交互增强**：
+  - 方案名称输入：支持为每个倍增方案自定义名称
+  - 保存方案：方案保存到本地存储（localStorage），最多保留20条历史记录
+  - 导出方案：一键导出完整倍增方案为文本文件（含基线分析/目标缺口/三杠杆分解/激励预算/ROI/风险提示）
+  - 历史方案管理：历史方案列表支持加载/删除，方案参数（目标倍数/周期）自动恢复
+  - 历史方案数量徽章：实时显示已保存方案数量
+- **P1业务闭环持续推进**：覆盖左侧导航栏全部子功能，优先补全缺少交互编辑页（CRUD、导入导出、保存）的子功能
 
 ### v0.2.43（2026-08-28）
 
@@ -402,6 +414,7 @@ node scripts/verify-dual-source.mjs     --version 0.2.27
 **Made with ❤️ by Vorzai Team**
 
 </div>
+
 
 
 
