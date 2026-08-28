@@ -6,7 +6,7 @@
 
 **核心理念**：不是 HR 管业务，而是 HR 洞察 × 业务数据双引擎驱动增长。
 
-[![Version](https://img.shields.io/badge/version-0.2.41-blue.svg)](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.41)
+[![Version](https://img.shields.io/badge/version-0.2.42-blue.svg)](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.42)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](#)
 [![Tests](https://img.shields.io/badge/tests-708%20passed-brightgreen.svg)](#)
@@ -20,7 +20,7 @@
 
 ### 下载安装
 
-**Windows**: [下载最新安装包 (v0.2.41)](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.41/vorzai-ecommerce%20Setup%200.2.41.exe) (SHA512 见 Release 页面摘要文件)
+**Windows**: [下载最新安装包 (v0.2.42)](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.42/vorzai-ecommerce%20Setup%200.2.42.exe) (SHA512 见 Release 页面摘要文件)
 
 **macOS/Linux**: [查看所有 Release 版本](https://github.com/kule-2025/vorzai-public/releases)
 
@@ -32,9 +32,9 @@
 
 | 源 | 状态 | 下载地址 |
 |---|------|---------|
-| **GitHub（主源）** | ✅ 正常（安装包托管） | [Releases · v0.2.41](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.41) |
+| **GitHub（主源）** | ✅ 正常（安装包托管） | [Releases · v0.2.42](https://github.com/kule-2025/vorzai-public/releases/tag/v0.2.42) |
 | **Gitee raw（回退源 1）** | ✅ 元数据回退，注入主源直链 | `gitee.com/king2030/vorzai/raw/main/latest.yml` |
-| **Gitee Release API（回退源 2）** | ✅ 版本元数据三级回退 | `gitee.com/api/v5/repos/king2030/vorzai/releases/tags/v0.2.41` |
+| **Gitee Release API（回退源 2）** | ✅ 版本元数据三级回退 | `gitee.com/api/v5/repos/king2030/vorzai/releases/tags/v0.2.42` |
 
 > 客户端按 `GitHub Release → Gitee raw → Gitee API` 三级依次尝试，任一成功即完成更新。
 
@@ -194,6 +194,15 @@ node scripts/verify-dual-source.mjs     --version 0.2.27
 ---
 
 ## 📝 更新日志
+
+### v0.2.42（2026-08-28）
+
+**模型选择器增强与品牌图标替换（多角色专家团交付）：**
+
+- **模型选择器全量可管理**：所有模型（含默认模型/大模型平台同步模型/自定义模型）均支持删除/隐藏，默认模型隐藏后可一键恢复，localStorage 持久化用户偏好
+- **桌面应用图标替换**：应用图标从默认 Electron 原子图标替换为 Vorzai 品牌 logo（橙色 V 字设计），生成 16/32/48/64/128/256/512/1024 全尺寸图标，桌面快捷方式与安装包统一品牌视觉
+- **公共仓库源码排查**：GitHub/Gitee 公共仓库全量排查，确认仅含 README.md 与 latest.yml，无源码泄漏
+- **双源部署方法论升级**：新增最高执行规则第一条——每次版本发布必须同步更新 GitHub 和 Gitee 双仓库 README，版本号与下载链接强制对齐
 
 ### v0.2.41（2026-08-28）
 
@@ -383,4 +392,5 @@ node scripts/verify-dual-source.mjs     --version 0.2.27
 **Made with ❤️ by Vorzai Team**
 
 </div>
+
 
