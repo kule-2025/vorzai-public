@@ -1,4 +1,4 @@
-# Vorzai v0.2.50
+# Vorzai v0.2.54
 
 > 面向电商企业的人力资源管理与业务解决方案桌面应用
 
@@ -8,9 +8,9 @@
 
 点击下方链接下载安装包：
 
-**[Vorzai Setup 0.2.50.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.50/vorzai-ecommerce Setup 0.2.50.exe)**
+**[Vorzai Setup 0.2.54.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.54/vorzai-ecommerce.Setup.0.2.54.exe)**
 
-- 文件大小：约 85 MB
+- 文件大小：约 103 MB
 - 系统要求：Windows 10/11 (x64)
 - 安装方式：双击运行，按向导完成安装
 
@@ -85,6 +85,7 @@ Vorzai 是一款专为电商企业设计的智能桌面助手，覆盖以下核�
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| v0.2.54 | 2026-08-29 | 全量模拟数据替换升级：17个核心业务模块完成后端API对接（增长引擎、转化与运营、工作流编排、数据分析、薪酬计算、任务看板、调休管理、倍增实验室、HR效率、HR激励、HR试点、全员OA、RACI矩阵、HR报告中心、风险预警、三支柱、OGSM目标树）、OGSM归因功能完善（getAttribution/runAutoAttribution API端点）、TypeScript类型系统全面对齐、双源部署方法论最高执行规则落地 |
 | v0.2.50 | 2026-08-28 | 重大更新：HR管理左侧垂直导航栏重构（6大分组35子功能）、对话框样式完全对齐workbuddy、应用内自动更新超时修复（双源快速超时+检查中状态）、企业用户权限分配对齐钉钉（5级角色+22功能模块+4级数据权限）、全面渲染异常修复（toLocaleString+map遍历共102文件） |
 | v0.2.4 | 2026-08-06 | 跨职能调试修复：直播库存扣减逻辑bug、事务完整性、审计日志、数据过滤优化 |
 | v0.2.3 | 2026-08-05 | 评审报告 B1-B8 缺陷修复闭环：server strict 加固、跨租户泄漏修复、前端 a11y、覆盖率门禁 |
