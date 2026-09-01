@@ -1,4 +1,4 @@
-# Vorzai v0.2.59
+# Vorzai v0.2.58
 
 > 面向电商企业的人力资源管理与业务解决方案桌面应用
 
@@ -8,7 +8,7 @@
 
 点击下方链接下载安装包：
 
-**[Vorzai Setup 0.2.59.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.59/vorzai-ecommerce.Setup.0.2.59.exe)**
+**[Vorzai Setup 0.2.58.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.58/vorzai-ecommerce.Setup.0.2.58.exe)**
 
 - 文件大小：约 101 MB
 - 系统要求：Windows 10/11 (x64)
@@ -16,8 +16,11 @@
 
 ### 国内镜像（Gitee）
 
-如果 GitHub 下载慢，请使用 Gitee 镜像：
-**[Gitee 下载页面](https://gitee.com/king2030/vorzai/releases)**
+如果 GitHub 下载速度较慢，应用内自动更新会通过 Gitee raw 通道获取 `latest.yml` 更新元数据：
+
+- Gitee raw 通道：`https://gitee.com/king2030/vorzai/raw/main/latest.yml`
+- 该通道仅提供更新元数据（版本号、sha512、下载地址），实际安装包仍从 GitHub Release 下载
+- 应用启动时会自动检查更新，无需手动操作
 
 ### 下载失败解决方案
 
@@ -34,15 +37,25 @@
 **方法 3：命令行下载**
 ```bash
 # 使用 curl（支持断点续传）
-curl -L -C - -o vorzai-ecommerce.Setup.0.2.59.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.59/vorzai-ecommerce.Setup.0.2.59.exe"
+curl -L -C - -o vorzai-ecommerce.Setup.0.2.58.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.58/vorzai-ecommerce.Setup.0.2.58.exe"
 
 # 或使用 wget
-wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.59/vorzai-ecommerce.Setup.0.2.59.exe"
+wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.58/vorzai-ecommerce.Setup.0.2.58.exe"
 ```
 
 **方法 4：GitHub 加速镜像**
 - 使用 [ghproxy.com](https://ghproxy.com/) 或 [gitclone.com](https://gitclone.com/) 等加速服务
 - 将下载链接中的 `github.com` 替换为加速域名
+
+## 自动更新说明
+
+Vorzai 内置双源自动更新机制：
+
+1. **主源（GitHub）**：应用启动时检查 GitHub Release 的 `latest.yml`，获取最新版本信息
+2. **回退源（Gitee）**：当 GitHub 访问超时时，自动切换到 Gitee raw 通道获取 `latest.yml`
+3. **灰度发布**：更新按设备分桶逐步放量，`stagingPercentage=100` 表示全量发布
+4. **签名校验**：安装包通过 Minisign 签名验证，确保下载内容未被篡改
+5. **手动检查**：在应用内「设置 → 检查更新」可手动触发更新检测
 
 ## 功能概览
 
@@ -93,7 +106,7 @@ Vorzai 是一款专为电商企业设计的智能桌面助手，覆盖以下核�
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
-| v0.2.59 | 2026-09-01 | 功能完善：30个导航项100%完成，89个子功能全部实现；新增直播电商(6Tab/21API/4表)、跨境电商(10Tab/15API/2表)、平台对接(7Tab/21API/3表)、对话工作流(5Tab/22API/4表)；性能优化：构建时间-30.5%，产物体积-47.6%；数据库196张表，1,017个API端点；前后端tsc零错误 |
+| v0.2.58 | 2026-09-01 | 功能完善100%：30个导航项全部完成，89个子功能全部实现；新增4个模块（直播电商6Tab/21API/4表、跨境电商10Tab/15API/2表、平台对接7Tab/21API/3表、对话工作流5Tab/22API/4表），共28个新Tab、79个新API、13张新表；数据库索引优化、性能优化（构建时间-30.5%，产物体积-47.6%）、渲染异常修复；数据库196张表，1,017个API端点；前后端tsc零错误 |
 | v0.2.57 | 2026-08-30 | 性能优化专项：超大型组件拆分（ProcurementHub等10文件重构，+360/-903行）、N+1查询优化、内联函数优化减少重渲染、useCallback导入补全、authMiddleware别名兼容、语法错误修复 |
 | v0.2.55 | 2026-08-29 | 全量模拟数据替换升级，7个核心业务模块完成后端API对接、OGSM归因功能完善（getAttribution/runAutoAttribution）、TypeScript类型系统全面对齐、双源部署方法论最高执行规则落地 |
 | v0.2.54 | 2026-08-29 | 全量模拟数据替换升级，17个核心业务模块完成后端API对接（增长引擎、转化与运营、工作流编排、数据分析、薪酬计算、任务看板、调休管理、倍增实验室、HR效率、HR激励、HR试点、全员OA、RACI矩阵、HR报告中心、风险预警、三支柱、OGSM目标树）、OGSM归因功能完善、TypeScript类型系统全面对齐 |
