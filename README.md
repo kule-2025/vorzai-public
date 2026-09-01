@@ -1,91 +1,115 @@
-# Vorzai v0.2.57
+# Vorzai v0.2.59
 
-> 闈㈠悜鐢靛晢浼佷笟鐨勪汉鍔涜祫婧愮鐞嗕笌涓氬姟瑙ｅ喅鏂规妗岄潰搴旂敤
+> 面向电商企业的人力资源管理与业务解决方案桌面应用
 
-## 涓嬭浇瀹夎
+## 下载安装
 
 ### Windows
 
-鐐瑰嚮涓嬫柟閾炬帴涓嬭浇瀹夎鍖咃細
+点击下方链接下载安装包：
 
-**[Vorzai Setup 0.2.57.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.57/vorzai-ecommerce.Setup.0.2.57.exe)**
+**[Vorzai Setup 0.2.59.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.59/vorzai-ecommerce.Setup.0.2.59.exe)**
 
-- 鏂囦欢澶у皬锛氱害 105 MB
-- 绯荤粺瑕佹眰锛歐indows 10/11 (x64)
-- 瀹夎鏂瑰紡锛氬弻鍑昏繍琛岋紝鎸夊悜瀵煎畬鎴愬畨瑁?
-### 鍥藉唴闀滃儚锛圙itee锛?
-濡傛灉 GitHub 涓嬭浇鎱紝璇蜂娇鐢?Gitee 闀滃儚锛?
-**[Gitee 涓嬭浇椤甸潰](https://gitee.com/king2030/vorzai/releases)**
+- 文件大小：约 101 MB
+- 系统要求：Windows 10/11 (x64)
+- 安装方式：双击运行，按向导完成安装
 
-### 涓嬭浇澶辫触瑙ｅ喅鏂规
+### 国内镜像（Gitee）
 
-濡傛灉涓嬭浇鍒?80MB 宸﹀彸涓柇锛岃灏濊瘯浠ヤ笅鏂规硶锛?
-**鏂规硶 1锛氫娇鐢ㄤ笅杞藉伐鍏凤紙鎺ㄨ崘锛?*
-- 浣跨敤 [IDM](https://www.internetdownloadmanager.com/)銆乕Free Download Manager](https://www.freedownloadmanager.org/) 鎴?[aria2](https://aria2.github.io/) 绛変笅杞藉伐鍏?- 杩欎簺宸ュ叿鏀寔鏂偣缁紶锛屽嵆浣夸腑鏂篃鑳戒粠鏂偣缁х画
+如果 GitHub 下载慢，请使用 Gitee 镜像：
+**[Gitee 下载页面](https://gitee.com/king2030/vorzai/releases)**
 
-**鏂规硶 2锛氭祻瑙堝櫒閲嶈瘯**
-- Chrome/Edge锛氭寜 `Ctrl+J` 鎵撳紑涓嬭浇椤碉紝鐐瑰嚮澶辫触鐨勪换鍔￠€夋嫨"缁х画涓嬭浇"
-- 鎴栦娇鐢ㄦ棤鐥曟ā寮忛噸鏂颁笅杞?
-**鏂规硶 3锛氬懡浠よ涓嬭浇**
+### 下载失败解决方案
+
+如果下载到 80MB 左右中断，请尝试以下方法：
+
+**方法 1：使用下载工具（推荐）**
+- 使用 [IDM](https://www.internetdownloadmanager.com/)、[Free Download Manager](https://www.freedownloadmanager.org/) 或 [aria2](https://aria2.github.io/) 等下载工具
+- 这些工具支持断点续传，即使中断也能从断点继续
+
+**方法 2：浏览器重试**
+- Chrome/Edge：按 `Ctrl+J` 打开下载页，点击失败的任务选择"继续下载"
+- 或使用无痕模式重新下载
+
+**方法 3：命令行下载**
 ```bash
-# 浣跨敤 curl锛堟敮鎸佹柇鐐圭画浼狅級
-curl -L -C - -o Vorzai-Setup-0.1.1.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.1.1/Vorzai-Setup-0.1.1.exe"
+# 使用 curl（支持断点续传）
+curl -L -C - -o vorzai-ecommerce.Setup.0.2.59.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.59/vorzai-ecommerce.Setup.0.2.59.exe"
 
-# 鎴栦娇鐢?wget
-wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.1.1/Vorzai-Setup-0.1.1.exe"
+# 或使用 wget
+wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.59/vorzai-ecommerce.Setup.0.2.59.exe"
 ```
 
-**鏂规硶 4锛欸itHub 鍔犻€熼暅鍍?*
-- 浣跨敤 [ghproxy.com](https://ghproxy.com/) 鎴?[gitclone.com](https://gitclone.com/) 绛夊姞閫熸湇鍔?- 灏嗕笅杞介摼鎺ヤ腑鐨?`github.com` 鏇挎崲涓哄姞閫熷煙鍚?
-## 鍔熻兘姒傝
+**方法 4：GitHub 加速镜像**
+- 使用 [ghproxy.com](https://ghproxy.com/) 或 [gitclone.com](https://gitclone.com/) 等加速服务
+- 将下载链接中的 `github.com` 替换为加速域名
 
-Vorzai 鏄竴娆句笓涓虹數鍟嗕紒涓氳璁＄殑鏅鸿兘妗岄潰鍔╂墜锛岃鐩栦互涓嬫牳蹇冭兘鍔涳細
+## 功能概览
 
-**涓氬姟绠＄悊** 鈥?绔嬮」 鈫?閫夊搧 鈫?缁勭洏 鈫?璁㈠崟 鈫?瀹㈡湇 鈫?缁撶畻锛屽畬鏁寸數鍟嗕笟鍔￠摼闂幆
+Vorzai 是一款专为电商企业设计的智能桌面助手，覆盖以下核心能力：
 
-**浜哄姏璧勬簮** 鈥?鍛樺伐绠＄悊銆佽€冨嫟璁板綍銆佺哗鏁堣瘎浼般€佽柂閰绠椼€佷汉鏁堝垎鏋?
-**鐩爣绠＄悊** 鈥?OGSM 鐩爣鍒嗚В锛堢洰鏍団啋鎸囨爣鈫掔瓥鐣モ啋搴﹂噺锛夈€丷ACI 璐ｄ换浜虹煩闃点€佹縺鍔辨満鍒?
-**鐭ヨ瘑绠＄悊** 鈥?浼佷笟鐭ヨ瘑搴撱€佷笓灞炴妧鑳戒腑蹇冦€佸璇濆紡宸ヤ綔娴?
-**杩炴帴鍣?* 鈥?棰勭暀閽夐拤銆侀涔︺€佷紒涓氶偖绠卞鎺ユ帴鍙?
-**瀹夊叏鏈哄埗** 鈥?JWT 璁よ瘉銆丷BAC 鏉冮檺鎺у埗銆佸绉熸埛鏁版嵁闅旂
+**业务管理** — 立项 → 选品 → 组盘 → 订单 → 客服 → 结算，完整电商业务链闭环
 
-## 榛樿璐﹀彿
+**人力资源** — 员工管理、考勤记录、绩效评估、薪酬计算、人效分析
 
-棣栨鍚姩鏃剁郴缁熶細鑷姩鍒濆鍖栨紨绀烘暟鎹紝鍙敤浠ヤ笅璐﹀彿鐧诲綍锛?
-| 鐢ㄦ埛鍚?| 瀵嗙爜 | 瑙掕壊 |
+**目标管理** — OGSM 目标分解（目标→指标→策略→度量）、RACI 责任人矩阵、激励机制
+
+**知识管理** — 企业知识库、专属技能中心、对话式工作流
+
+**连接器** — 预留钉钉、飞书、企业邮箱对接接口
+
+**安全机制** — JWT 认证、RBAC 权限控制、多租户数据隔离
+
+**直播电商** — 直播会话管理、主播管理、商品库、回放分析（6 Tab / 21 API / 4 表）
+
+**跨境电商** — 跨境业务全流程管理（10 Tab / 15 API / 2 表）
+
+**平台对接** — 多平台数据接入与同步（7 Tab / 21 API / 3 表）
+
+**对话工作流** — 可视化工作流编排与执行（5 Tab / 22 API / 4 表）
+
+## 默认账号
+
+首次启动时系统会自动初始化演示数据，可用以下账号登录：
+
+| 用户名 | 密码 | 角色 |
 |--------|------|------|
-| admin | admin123 | 瓒呯骇绠＄悊鍛?|
-| manager | admin123 | 閮ㄩ棬缁忕悊 |
-| member | admin123 | 鏅€氭垚鍛?|
+| admin | admin123 | 超级管理员 |
+| manager | admin123 | 部门经理 |
+| member | admin123 | 普通成员 |
 
-> 鈿狅笍 璇峰湪鐢熶骇鐜涓強鏃朵慨鏀归粯璁ゅ瘑鐮?
-## 鎶€鏈爤
+> ⚠️ 请在生产环境中及时修改默认密码
 
-- **妗岄潰妗嗘灦**锛欵lectron 33
-- **鍓嶇**锛歊eact 18 + TypeScript + Vite + Zustand
-- **鍚庣**锛欵xpress 5 + node:sqlite锛圢ode.js 鍐呯疆鏁版嵁搴擄級
-- **璁よ瘉**锛欽WT 鍙?Token + RBAC 浜旂骇鏉冮檺
-- **鏁版嵁**锛歋QLite锛堝祵鍏ュ紡锛屾暟鎹湰鍦板寲锛岀绾垮彲鐢級
+## 技术栈
 
-## 鐗堟湰鍘嗗彶
+- **桌面框架**：Electron 33
+- **前端**：React 18 + TypeScript + Vite + Zustand
+- **后端**：Express + better-sqlite3（嵌入式数据库）
+- **认证**：JWT Token + RBAC 五级权限
+- **数据**：SQLite（嵌入式，数据本地化，离线可用）
+- **规模**：196 张数据表，1,017 个 API 端点，30 个导航项，89 个子功能
 
-| 鐗堟湰 | 鏃ユ湡 | 璇存槑 |
+## 版本历史
+
+| 版本 | 日期 | 说明 |
 |------|------|------|
-| v0.2.57 | 2026-08-30 | 鎬ц兘浼樺寲涓撻」锛氳秴澶у瀷缁勪欢鎷嗗垎锛圥rocurementHub绛?0鏂囦欢閲嶆瀯锛?360/-903琛岋級銆丯+1鏌ヨ浼樺寲銆佸唴鑱斿嚱鏁颁紭鍖栧噺灏戦噸娓叉煋銆乽seCallback瀵煎叆琛ュ叏銆乤uthMiddleware鍒悕鍏煎銆佽娉曢敊璇慨澶?|
-| v0.2.55 | 2026-08-29 | 鍏ㄩ噺妯℃嫙鏁版嵁鏇挎崲鍗囩骇锛?7涓牳蹇冧笟鍔℃ā鍧楀畬鎴愬悗绔疉PI瀵规帴銆丱GSM褰掑洜鍔熻兘瀹屽杽锛坓etAttribution/runAutoAttribution锛夈€乀ypeScript绫诲瀷绯荤粺鍏ㄩ潰瀵归綈銆佸弻婧愰儴缃叉柟娉曡鏈€楂樻墽琛岃鍒欒惤鍦?|
-| v0.2.54 | 2026-08-29 | 鍏ㄩ噺妯℃嫙鏁版嵁鏇挎崲鍗囩骇锛?7涓牳蹇冧笟鍔℃ā鍧楀畬鎴愬悗绔疉PI瀵规帴锛堝闀垮紩鎿庛€佽浆鍖栦笌杩愯惀銆佸伐浣滄祦缂栨帓銆佹暟鎹垎鏋愩€佽柂閰绠椼€佷换鍔＄湅鏉裤€佽皟浼戠鐞嗐€佸€嶅瀹為獙瀹ゃ€丠R鏁堢巼銆丠R婵€鍔便€丠R璇曠偣銆佸叏鍛極A銆丷ACI鐭╅樀銆丠R鎶ュ憡涓績銆侀闄╅璀︺€佷笁鏀煴銆丱GSM鐩爣鏍戯級銆丱GSM褰掑洜鍔熻兘瀹屽杽锛坓etAttribution/runAutoAttribution API绔偣锛夈€乀ypeScript绫诲瀷绯荤粺鍏ㄩ潰瀵归綈銆佸弻婧愰儴缃叉柟娉曡鏈€楂樻墽琛岃鍒欒惤鍦?|
-| v0.2.50 | 2026-08-28 | 閲嶅ぇ鏇存柊锛欻R绠＄悊宸︿晶鍨傜洿瀵艰埅鏍忛噸鏋勶紙6澶у垎缁?5瀛愬姛鑳斤級銆佸璇濇鏍峰紡瀹屽叏瀵归綈workbuddy銆佸簲鐢ㄥ唴鑷姩鏇存柊瓒呮椂淇锛堝弻婧愬揩閫熻秴鏃?妫€鏌ヤ腑鐘舵€侊級銆佷紒涓氱敤鎴锋潈闄愬垎閰嶅榻愰拤閽夛紙5绾ц鑹?22鍔熻兘妯″潡+4绾ф暟鎹潈闄愶級銆佸叏闈㈡覆鏌撳紓甯镐慨澶嶏紙toLocaleString+map閬嶅巻鍏?02鏂囦欢锛?|
-| v0.2.4 | 2026-08-06 | 璺ㄨ亴鑳借皟璇曚慨澶嶏細鐩存挱搴撳瓨鎵ｅ噺閫昏緫bug銆佷簨鍔″畬鏁存€с€佸璁℃棩蹇椼€佹暟鎹繃婊や紭鍖?|
-| v0.2.3 | 2026-08-05 | 璇勫鎶ュ憡 B1-B8 缂洪櫡淇闂幆锛歴erver strict 鍔犲浐銆佽法绉熸埛娉勬紡淇銆佸墠绔?a11y銆佽鐩栫巼闂ㄧ |
-| v0.2.0 | 2026-07-30 | 鍟嗕笟鍖栧崌绾э細璁稿彲璇佺郴缁熴€佽闃呯鐞嗐€佽瘯鐢ㄦ湡銆侀厤棰濊拷韪€佽澶囩粦瀹氥€佸璁℃棩蹇椼€佹毚鍔涚牬瑙ｉ槻鎶?|
-| v0.1.2 | 2026-07-30 | 淇绌虹櫧椤甸潰锛歏ite base璺緞銆丆SP瀛椾綋鍩熴€佸悗绔湇鍔″閿?|
-| v0.1.1 | 2026-07-29 | 瀹夊叏淇锛氱鎴烽殧绂诲寮恒€佽鍗曠姸鎬佹満瀹屽杽銆丷ACI/钖叕UPSERT淇銆乀oken鍒锋柊寰幆淇 |
-| v0.1.0 | 2026-07-29 | 棣栦釜姝ｅ紡鐗堟湰锛屽叏鏍堝疄鐜?|
+| v0.2.59 | 2026-09-01 | 功能完善：30个导航项100%完成，89个子功能全部实现；新增直播电商(6Tab/21API/4表)、跨境电商(10Tab/15API/2表)、平台对接(7Tab/21API/3表)、对话工作流(5Tab/22API/4表)；性能优化：构建时间-30.5%，产物体积-47.6%；数据库196张表，1,017个API端点；前后端tsc零错误 |
+| v0.2.57 | 2026-08-30 | 性能优化专项：超大型组件拆分（ProcurementHub等10文件重构，+360/-903行）、N+1查询优化、内联函数优化减少重渲染、useCallback导入补全、authMiddleware别名兼容、语法错误修复 |
+| v0.2.55 | 2026-08-29 | 全量模拟数据替换升级，7个核心业务模块完成后端API对接、OGSM归因功能完善（getAttribution/runAutoAttribution）、TypeScript类型系统全面对齐、双源部署方法论最高执行规则落地 |
+| v0.2.54 | 2026-08-29 | 全量模拟数据替换升级，17个核心业务模块完成后端API对接（增长引擎、转化与运营、工作流编排、数据分析、薪酬计算、任务看板、调休管理、倍增实验室、HR效率、HR激励、HR试点、全员OA、RACI矩阵、HR报告中心、风险预警、三支柱、OGSM目标树）、OGSM归因功能完善、TypeScript类型系统全面对齐 |
+| v0.2.50 | 2026-08-28 | 重大更新：HR管理左侧垂直导航栏重构（6大分组35子功能）、对话框样式完全对齐workbuddy、应用内自动更新超时修复（双源快速超时+检查中状态）、企业用户权限分配对齐钉钉（5级角色22功能模块+4级数据权限）、全面渲染异常修复（toLocaleString+map遍历共102文件） |
+| v0.2.4 | 2026-08-06 | 跨职能调试修复：直播库存扣减逻辑bug、事务完整性、审计日志、数据过滤优化 |
+| v0.2.3 | 2026-08-05 | 评审报告 B1-B8 缺陷修复闭环：server strict 加固、跨租户泄漏修复、前端a11y、覆盖率门禁 |
+| v0.2.0 | 2026-07-30 | 商业化升级：许可证系统、订阅管理、试用期、配额追踪、设备绑定、审计日志、暴力破解防护 |
+| v0.1.2 | 2026-07-30 | 修复空白页面：Vite base路径、CSP字体域、后端服务容错 |
+| v0.1.1 | 2026-07-29 | 安全修复：租户隔离增强、订单状态机完善、RACI/薪酬UPSERT修复、Token刷新循环修复 |
+| v0.1.0 | 2026-07-29 | 首个正式版本，全栈实现 |
 
-## 鍙嶉涓庢敮鎸?
-- 闂鍙嶉锛歔GitHub Issues](https://github.com/kule-2025/vorzai-public/issues)
-- 閭锛歬ing2030@foxmail.com
+## 反馈与支持
+
+- 问题反馈：[GitHub Issues](https://github.com/kule-2025/vorzai-public/issues)
+- 邮箱：king2030@foxmail.com
 
 ## License
 
-Proprietary 鈥?漏 2026 Vorzai Team. All rights reserved.
+Proprietary — © 2026 Vorzai Team. All rights reserved.
