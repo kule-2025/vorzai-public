@@ -1,8 +1,10 @@
-version: 0.2.56
+version: 0.2.59
 files:
-  - url: vorzai-ecommerce.Setup.0.2.56.exe
-    sha512: EPDs7n8ucUZGhaCba6yuuH8x056/K2W23jV9o0RdifnvHr8fXR4/yK4AwmCLJBFS2GR1dnksw60OiJQpluFxUg==
-    size: 108080548
-path: vorzai-ecommerce.Setup.0.2.56.exe
-sha512: EPDs7n8ucUZGhaCba6yuuH8x056/K2W23jV9o0RdifnvHr8fXR4/yK4AwmCLJBFS2GR1dnksw60OiJQpluFxUg==
-releaseDate: '2026-08-30T17:54:25.324Z'
+  - url: vorzai-ecommerce.Setup.0.2.59.exe
+    sha512: zmKiQolw2FX0dONn5MnT4KNijRWXnOdvk+q/5gvgPqD46iEpFojNwkS7DezKe1rFpt9KFThwkCojL4Lj2i3MAA==
+    size: 106315924
+path: vorzai-ecommerce.Setup.0.2.59.exe
+sha512: zmKiQolw2FX0dONn5MnT4KNijRWXnOdvk+q/5gvgPqD46iEpFojNwkS7DezKe1rFpt9KFThwkCojL4Lj2i3MAA==
+sha256: fd42006f369032e8e40fa01e3105d3cf771149509c645622b50456a7a9bc16cc
+releaseDate: 2026-09-01T12:07:06.721Z
+stagingPercentage: 100
