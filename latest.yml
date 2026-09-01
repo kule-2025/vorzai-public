@@ -1,12 +1,10 @@
-version: 0.2.58
+version: 0.2.59
 files:
-  - url: vorzai-ecommerce.Setup.0.2.58.exe
-    sha512: rapSRqU132Pd83eX0bj+IFlX2dlhwr5ig02XyqbxOw8mr3lOo/WEoJ84QADEJGFdMrOkFS8ThoUE4YyzNDnqjg==
-    signature: vorzai-ecommerce.Setup.0.2.58.exe.sig
-    size: 106315929
-path: vorzai-ecommerce.Setup.0.2.58.exe
-sha512: rapSRqU132Pd83eX0bj+IFlX2dlhwr5ig02XyqbxOw8mr3lOo/WEoJ84QADEJGFdMrOkFS8ThoUE4YyzNDnqjg==
-sha256: 7ed1cb23e04a24e4b190f15a16082afb28c4638a0384ba3dff927d5482a27ecc
-releaseDate: 2026-09-01T12:42:25.994Z
+  - url: vorzai-ecommerce.Setup.0.2.59.exe
+    sha512: 72MRZMm1W8UxBk7bWfj2lUV6T0CRucxmA/578q9ejdxZ/bywheEScdOyNerjWUi1QrrA3w6jSxfzT4tqBLquAQ==
+    size: 106315958
+path: vorzai-ecommerce.Setup.0.2.59.exe
+sha512: 72MRZMm1W8UxBk7bWfj2lUV6T0CRucxmA/578q9ejdxZ/bywheEScdOyNerjWUi1QrrA3w6jSxfzT4tqBLquAQ==
+sha256: ca14eadc5b1ecc7e6cfc1e385606fbbca031a1fcefc89746b1329c3870fd57e7
+releaseDate: 2026-09-01T13:01:58.443Z
 stagingPercentage: 100
-minisign_pubkey: -----BEGINPUBLICKEY-----MCowBQYDK2VwAyEA4JFp98loNrBzbXGQXC8YcutERy5F3YAc7y7XptTaMcc=-----ENDPUBLICKEY-----
