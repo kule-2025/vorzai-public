@@ -1,4 +1,4 @@
-# Vorzai v0.2.59
+# Vorzai v0.2.61
 
 > 面向电商企业的人力资源管理与业务解决方案桌面应用
 
@@ -8,7 +8,7 @@
 
 点击下方链接下载安装包：
 
-**[Vorzai Setup 0.2.59.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.59/vorzai-ecommerce.Setup.0.2.59.exe)**
+**[Vorzai Setup 0.2.61.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.61/vorzai-ecommerce.Setup.0.2.61.exe)**
 
 - 文件大小：约 101 MB
 - 系统要求：Windows 10/11 (x64)
@@ -37,10 +37,10 @@
 **方法 3：命令行下载**
 ```bash
 # 使用 curl（支持断点续传）
-curl -L -C - -o vorzai-ecommerce.Setup.0.2.59.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.59/vorzai-ecommerce.Setup.0.2.59.exe"
+curl -L -C - -o vorzai-ecommerce.Setup.0.2.61.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.61/vorzai-ecommerce.Setup.0.2.61.exe"
 
 # 或使用 wget
-wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.59/vorzai-ecommerce.Setup.0.2.59.exe"
+wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.61/vorzai-ecommerce.Setup.0.2.61.exe"
 ```
 
 **方法 4：GitHub 加速镜像**
@@ -106,6 +106,8 @@ Vorzai 是一款专为电商企业设计的智能桌面助手，覆盖以下核�
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| v0.2.61 | 2026-09-04 | 白屏根因修复+会员体系重构+9项bug全量修复：修复updater误杀渲染进程导致白屏（hasPendingUpdates添加版本检查、cleanupOldVersionProcesses添加父进程PID检查）；会员体系重构为4档定价（Free/Pro¥299/Team¥1299/Enterprise¥6800起），移除API额度/存储配额/数量限制；修复ConversionHub语法错误、SkillCenter .filter错误、多租户旧档位残留等9项bug |
+| v0.2.60 | 2026-09-03 | P0-P3功能修复+租户计费模块+API响应格式统一+CI路由检查集成：28文件修复，生产环境30页面测试通过，租户计费表+支付网关manual模式，财务洞察真实数据接入12个端点 |
 | v0.2.59 | 2026-09-02 | P1批次五模块根端联调验证：制度管理（方案场景/状态机）、员工/考勤记录、KPI指标库/方案/结果三级闭环、绩效→调薪数据联动、HR-AI对话报告与洞察预测、薪酬重算与调薪建议提交；修复SQLite严格模式IFNULL双引号、跨模块状态枚举对齐、hydrate统计字段camelCase映射；全链路E2E 80断言+10表落库核验通过 |
 | v0.2.58 | 2026-09-01 | 功能完善100%：30个导航项全部完成，89个子功能全部实现；新增4个模块（直播电商6Tab/21API/4表、跨境电商10Tab/15API/2表、平台对接7Tab/21API/3表、对话工作流5Tab/22API/4表）；性能优化（构建时间-30.5%，产物体积-47.6%）；数据库196张表，1,017个API端点；前后端tsc零错误；渲染异常全面修复；对话框图标补齐；桌面Logo替换 |
 | v0.2.57 | 2026-08-30 | 性能优化专项：超大型组件拆分（ProcurementHub等10文件重构，+360/-903行）、N+1查询优化、内联函数优化减少重渲染、useCallback导入补全、authMiddleware别名兼容、语法错误修复 |
