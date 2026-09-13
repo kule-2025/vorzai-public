@@ -1,12 +1,8 @@
-version: 0.2.59
+version: 0.2.67
 files:
-  - url: vorzai-ecommerce.Setup.0.2.59.exe
-    sha512: kdybsnHk4ItLwvn0AHdt1wnuAvNOyoUuARbUcEdLFHWzhMOOihwEONkmd3Xb7/deIgMffkRdJOElRO+cA7Q0Qw==
-    signature: vorzai-ecommerce.Setup.0.2.59.exe.sig
-    size: 106360384
-path: vorzai-ecommerce.Setup.0.2.59.exe
-sha512: kdybsnHk4ItLwvn0AHdt1wnuAvNOyoUuARbUcEdLFHWzhMOOihwEONkmd3Xb7/deIgMffkRdJOElRO+cA7Q0Qw==
-sha256: 3dc7a4e37116f8558cbebfd92e2f911afd1a6ea233b478323bf9e2b491db483c
-releaseDate: 2026-09-02T03:20:02.473Z
-stagingPercentage: 100
-minisign_pubkey: -----BEGINPUBLICKEY-----MCowBQYDK2VwAyEA4JFp98loNrBzbXGQXC8YcutERy5F3YAc7y7XptTaMcc=-----ENDPUBLICKEY-----
+  - url: vorzai-ecommerce.Setup.0.2.67.exe
+    sha512: DNtThg+PHqA6FnJ0+HKAdnIJz/2QqbfA6gkJNFVhZ93gAbngUCaCRGhO8cxVhPtYg/zsUVhBm3A1iYMqb3y2SA==
+    size: 103824265
+path: vorzai-ecommerce.Setup.0.2.67.exe
+sha512: DNtThg+PHqA6FnJ0+HKAdnIJz/2QqbfA6gkJNFVhZ93gAbngUCaCRGhO8cxVhPtYg/zsUVhBm3A1iYMqb3y2SA==
+releaseDate: '2026-09-13T10:48:39.853Z'
