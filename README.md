@@ -1,134 +1,136 @@
-# Vorzai v0.2.67
+# Vorzai v0.2.72
 
-> 闈㈠悜鐢靛晢浼佷笟鐨勪汉鍔涜祫婧愮鐞嗕笌涓氬姟瑙ｅ喅鏂规妗岄潰搴旂敤
+> 面向电商企业的人力资源管理与业务解决方案桌面应用
 
-## 涓嬭浇瀹夎
+## 下载安装
 
 ### Windows
 
-鐐瑰嚮涓嬫柟閾炬帴涓嬭浇瀹夎鍖咃細
+点击下方链接下载安装包：
 
-**[Vorzai Setup 0.2.67.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.67/vorzai-ecommerce.Setup.0.2.67.exe)**
+**[Vorzai Setup 0.2.72.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.72/Vorzai.Setup.0.2.72.exe)**
 
-- 鏂囦欢澶у皬锛氱害 101 MB
-- 绯荤粺瑕佹眰锛歐indows 10/11 (x64)
-- 瀹夎鏂瑰紡锛氬弻鍑昏繍琛岋紝鎸夊悜瀵煎畬鎴愬畨瑁?
+- 文件大小：约 221 MB
+- 系统要求：Windows 10/11 (x64)
+- 安装方式：双击运行，按向导完成安装
 
-### 鍥藉唴闀滃儚锛圙itee锛?
+### 国内镜像（Gitee）
 
-濡傛灉 GitHub 涓嬭浇閫熷害杈冩參锛屽簲鐢ㄥ唴鑷姩鏇存柊浼氶€氳繃 Gitee raw 閫氶亾鑾峰彇 `latest.yml` 鏇存柊鍏冩暟鎹細
+如果 GitHub 下载速度较慢，应用内自动更新会通过 Gitee raw 通道获取 `latest.yml` 更新元数据：
 
-- Gitee raw 閫氶亾锛歚https://gitee.com/king2030/vorzai/raw/main/latest.yml`
-- 璇ラ€氶亾浠呮彁渚涙洿鏂板厓鏁版嵁锛堢増鏈彿銆乻ha512銆佷笅杞藉湴鍧€锛夛紝瀹為檯瀹夎鍖呬粛浠?GitHub Release 涓嬭浇
-- 搴旂敤鍚姩鏃朵細鑷姩妫€鏌ユ洿鏂帮紝鏃犻渶鎵嬪姩鎿嶄綔
+- Gitee raw 通道：`https://gitee.com/king2030/vorzai/raw/main/latest.yml`
+- 该通道仅提供更新元数据（版本号、sha512、下载地址），实际安装包仍从 GitHub Release 下载
+- 应用启动时会自动检查更新，无需手动操作
 
-### 涓嬭浇澶辫触瑙ｅ喅鏂规
+### 下载失败解决方案
 
-濡傛灉涓嬭浇鍒?80MB 宸﹀彸涓柇锛岃灏濊瘯浠ヤ笅鏂规硶锛?
+如果下载到 80MB 左右中断，请尝试以下方法：
 
-**鏂规硶 1锛氫娇鐢ㄤ笅杞藉伐鍏凤紙鎺ㄨ崘锛?*
-- 浣跨敤 [IDM](https://www.internetdownloadmanager.com/)銆乕Free Download Manager](https://www.freedownloadmanager.org/) 鎴?[aria2](https://aria2.github.io/) 绛変笅杞藉伐鍏?
-- 杩欎簺宸ュ叿鏀寔鏂偣缁紶锛屽嵆浣夸腑鏂篃鑳戒粠鏂偣缁х画
+**方法 1：使用下载工具（推荐）**
+- 使用 [IDM](https://www.internetdownloadmanager.com/)、[Free Download Manager](https://www.freedownloadmanager.org/) 或 [aria2](https://aria2.github.io/) 等下载工具
+- 这些工具支持断点续传，即使中断也能从断点继续
 
-**鏂规硶 2锛氭祻瑙堝櫒閲嶈瘯**
-- Chrome/Edge锛氭寜 `Ctrl+J` 鎵撳紑涓嬭浇椤碉紝鐐瑰嚮澶辫触鐨勪换鍔￠€夋嫨"缁х画涓嬭浇"
-- 鎴栦娇鐢ㄦ棤鐥曟ā寮忛噸鏂颁笅杞?
+**方法 2：浏览器重试**
+- Chrome/Edge：按 `Ctrl+J` 打开下载页，点击失败的任务选择"继续下载"
+- 或使用无痕模式重新下载
 
-**鏂规硶 3锛氬懡浠よ涓嬭浇**
+**方法 3：命令行下载**
 ```bash
-# 浣跨敤 curl锛堟敮鎸佹柇鐐圭画浼狅級
-curl -L -C - -o vorzai-ecommerce.Setup.0.2.67.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.67/vorzai-ecommerce.Setup.0.2.67.exe"
+# 使用 curl（支持断点续传）
+curl -L -C - -o Vorzai.Setup.0.2.72.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.72/Vorzai.Setup.0.2.72.exe"
 
-# 鎴栦娇鐢?wget
-wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.67/vorzai-ecommerce.Setup.0.2.67.exe"
+# 或使用 wget
+wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.72/Vorzai.Setup.0.2.72.exe"
 ```
 
-**鏂规硶 4锛欸itHub 鍔犻€熼暅鍍?*
-- 浣跨敤 [ghproxy.com](https://ghproxy.com/) 鎴?[gitclone.com](https://gitclone.com/) 绛夊姞閫熸湇鍔?
-- 灏嗕笅杞介摼鎺ヤ腑鐨?`github.com` 鏇挎崲涓哄姞閫熷煙鍚?
+**方法 4：GitHub 加速镜像**
+- 使用 [ghproxy.com](https://ghproxy.com/) 或 [gitclone.com](https://gitclone.com/) 等加速服务
+- 将下载链接中的 `github.com` 替换为加速域名
 
-## 鑷姩鏇存柊璇存槑
+## 自动更新说明
 
-Vorzai 鍐呯疆鍙屾簮鑷姩鏇存柊鏈哄埗锛?
+Vorzai 内置双源自动更新机制：
 
-1. **涓绘簮锛圙itHub锛?*锛氬簲鐢ㄥ惎鍔ㄦ椂妫€鏌?GitHub Release 鐨?`latest.yml`锛岃幏鍙栨渶鏂扮増鏈俊鎭?
-2. **鍥為€€婧愶紙Gitee锛?*锛氬綋 GitHub 璁块棶瓒呮椂鏃讹紝鑷姩鍒囨崲鍒?Gitee raw 閫氶亾鑾峰彇 `latest.yml`
-3. **鐏板害鍙戝竷**锛氭洿鏂版寜璁惧鍒嗘《閫愭鏀鹃噺锛宍stagingPercentage=100` 琛ㄧず鍏ㄩ噺鍙戝竷
-4. **瀹屾暣鎬ф牎楠?*锛氬畨瑁呭寘閫氳繃 sha512 鏍￠獙锛岀‘淇濅笅杞藉唴瀹规湭琚鏀?
-5. **鎵嬪姩妫€鏌?*锛氬湪搴旂敤鍐呫€岃缃?鈫?妫€鏌ユ洿鏂般€嶅彲鎵嬪姩瑙﹀彂鏇存柊妫€娴?
+1. **主源（GitHub）**：应用启动时检查 GitHub Release 的 `latest.yml`，获取最新版本信息
+2. **回退源（Gitee）**：当 GitHub 访问超时时，自动切换到 Gitee raw 通道获取 `latest.yml`
+3. **灰度发布**：更新按设备分桶逐步放量，`stagingPercentage=100` 表示全量发布
+4. **完整性校验**：安装包通过 sha512 校验，确保下载内容未被篡改
+5. **手动检查**：在应用内「设置 → 检查更新」可手动触发更新检测
 
-## 鍔熻兘姒傝
+## 功能概览
 
-Vorzai 鏄竴娆句笓涓虹數鍟嗕紒涓氳璁＄殑鏅鸿兘妗岄潰鍔╂墜锛岃鐩栦互涓嬫牳蹇冭兘鍔涳細
+Vorzai 是一款专为电商企业设计的智能桌面助手，覆盖以下核心能力：
 
-**涓氬姟绠＄悊** 鈥?绔嬮」 鈫?閫夊搧 鈫?缁勭洏 鈫?璁㈠崟 鈫?瀹㈡湇 鈫?缁撶畻锛屽畬鏁寸數鍟嗕笟鍔￠摼闂幆
+**业务管理** — 立项 → 选品 → 组盘 → 订单 → 客服 → 结算，完整电商业务链闭环
 
-**浜哄姏璧勬簮** 鈥?鍛樺伐绠＄悊銆佽€冨嫟璁板綍銆佺哗鏁堣瘎浼般€佽柂閰绠椼€佷汉鏁堝垎鏋?
+**人力资源** — 员工管理、考勤记录、绩效评估、薪酬计算、人效分析
 
-**鐩爣绠＄悊** 鈥?OGSM 鐩爣鍒嗚В锛堢洰鏍団啋鎸囨爣鈫掔瓥鐣モ啋搴﹂噺锛夈€丷ACI 璐ｄ换浜虹煩闃点€佹縺鍔辨満鍒?
+**目标管理** — OGSM 目标分解（目标→指标→策略→度量）、RACI 责任人矩阵、激励机制
 
-**鐭ヨ瘑绠＄悊** 鈥?浼佷笟鐭ヨ瘑搴撱€佷笓灞炴妧鑳戒腑蹇冦€佸璇濆紡宸ヤ綔娴?
+**知识管理** — 企业知识库、专属技能中心、对话式工作流
 
-**杩炴帴鍣?* 鈥?棰勭暀閽夐拤銆侀涔︺€佷紒涓氶偖绠卞鎺ユ帴鍙?
+**连接器** — 预留钉钉、飞书、企业邮箱对接接口
 
-**瀹夊叏鏈哄埗** 鈥?JWT 璁よ瘉銆丷BAC 鏉冮檺鎺у埗銆佸绉熸埛鏁版嵁闅旂
+**安全机制** — JWT 认证、RBAC 权限控制、多租户数据隔离
 
-**鐩存挱鐢靛晢** 鈥?鐩存挱浼氳瘽绠＄悊銆佷富鎾鐞嗐€佸晢鍝佸簱銆佸洖鏀惧垎鏋愶紙6 Tab / 21 API / 4 琛級
+**直播电商** — 直播会话管理、主播管理、商品库、回放分析（6 Tab / 21 API / 4 表）
 
-**璺ㄥ鐢靛晢** 鈥?璺ㄥ涓氬姟鍏ㄦ祦绋嬬鐞嗭紙10 Tab / 15 API / 2 琛級
+**跨境电商** — 跨境业务全流程管理（10 Tab / 15 API / 2 表）
 
-**骞冲彴瀵规帴** 鈥?澶氬钩鍙版暟鎹帴鍏ヤ笌鍚屾锛? Tab / 21 API / 3 琛級
+**平台对接** — 多平台数据接入与同步（7 Tab / 21 API / 3 表）
 
-**瀵硅瘽宸ヤ綔娴?* 鈥?鍙鍖栧伐浣滄祦缂栨帓涓庢墽琛岋紙5 Tab / 22 API / 4 琛級
+**对话工作流** — 可视化工作流编排与执行（5 Tab / 22 API / 4 表）
 
-## 榛樿璐﹀彿
+## 默认账号
 
-棣栨鍚姩鏃剁郴缁熶細鑷姩鍒濆鍖栨紨绀烘暟鎹紝鍙敤浠ヤ笅璐﹀彿鐧诲綍锛?
+首次启动时系统会自动初始化演示数据，可用以下账号登录：
 
-| 鐢ㄦ埛鍚?| 瀵嗙爜 | 瑙掕壊 |
+| 用户名 | 密码 | 角色 |
 |--------|------|------|
-| admin | admin123 | 瓒呯骇绠＄悊鍛?|
-| manager | admin123 | 閮ㄩ棬缁忕悊 |
-| member | admin123 | 鏅€氭垚鍛?|
+| admin | admin123 | 超级管理员 |
+| manager | admin123 | 部门经理 |
+| member | admin123 | 普通成员 |
 
-> 鈿狅笍 璇峰湪鐢熶骇鐜涓強鏃朵慨鏀归粯璁ゅ瘑鐮?
+> ⚠️ 请在生产环境中及时修改默认密码
 
-## 鎶€鏈爤
+## 技术栈
 
-- **妗岄潰妗嗘灦**锛欵lectron 33
-- **鍓嶇**锛歊eact 18 + TypeScript + Vite + Zustand
-- **鍚庣**锛欵xpress + better-sqlite3锛堝祵鍏ュ紡鏁版嵁搴擄級
-- **璁よ瘉**锛欽WT Token + RBAC 浜旂骇鏉冮檺
-- **鏁版嵁**锛歋QLite锛堝祵鍏ュ紡锛屾暟鎹湰鍦板寲锛岀绾垮彲鐢級
-- **瑙勬ā**锛?96 寮犳暟鎹〃锛?,017 涓?API 绔偣锛?0 涓鑸」锛?9 涓瓙鍔熻兘
+- **桌面框架**：Electron 33
+- **前端**：React 18 + TypeScript + Vite + Zustand
+- **后端**：Express + better-sqlite3（嵌入式数据库）
+- **认证**：JWT Token + RBAC 五级权限
+- **数据**：SQLite（嵌入式，数据本地化，离线可用）
+- **规模**：196 张数据表，1,017 个 API 端点，30 个导航项，89 个子功能
 
-## 鐗堟湰鍘嗗彶
+## 版本历史
 
-| 鐗堟湰 | 鏃ユ湡 | 璇存槑 |
+| 版本 | 日期 | 说明 |
 |------|------|------|
-| v0.2.66 | 2026-09-10 | 鐢靛晢HR娲炲療鍦烘櫙绔埌绔叏閲忛獙璇?鍏ㄩ噺鍔熻兘淇锛?5涓狝PI鑺傜偣100%閫氳繃銆?0涓狢DP椤甸潰100%姝ｅ父娓叉煋銆侀浂鏈嶅姟绔?00閿欒锛?鏉′笟鍔℃祦鍏ㄩ儴璺戦€氾紙HR鏍稿績娴?鐢靛晢闂幆娴?涓氱哗鍊嶅娴?鐩存挱杩愯惀娴?鏅鸿兘宸ヤ綔娴佹祦锛夛紱淇KPI鏂规鍒涘缓闇€鍚玦ndicators鍏宠仈銆佽柂閰瓧娈靛悕涓嬪垝绾垮懡鍚?employee_id/employee_name)銆佽鍗昳tems闇€unitPrice銆佸敭鍚巖eturnItems闇€unitPrice銆佺洿鎾満娆lannedStart瀛楁銆佸敭鍚庢敹璐ч渶order_id瀛樺湪銆佽蹇嗕笂涓嬫枃瀛楁鍚峩ey/value绛夊弬鏁板榻愰棶棰橈紱閲囪喘鍏ュ簱receipts鏍煎紡銆佽鍗曠姸鎬佹満4鎬佹祦杞€佸敭鍚庣姸鎬佹満3鎬佹祦杞€佸簱瀛樿嚜鍔ㄨ仈鍔?閲囪喘鍏ュ簱+鍞悗鍥炶ˉ)鍏ㄩ儴楠岃瘉閫氳繃 |
-| v0.2.64 | 2026-09-08 | 鍏ㄩ噺mock鏁版嵁娓呯悊+閫氱敤CSV瀵煎叆妗嗘灦+15澶勫亣瀵煎叆淇+Analytics缁熻淇+鍚庣13妯″潡娉ㄥ唽锛氱Щ闄ょ敓浜т唬鐮佷腑鎵€鏈塵ock婕旂ず鏁版嵁锛圵ebhookManager/DataIntegrationCenter/ApiOpenPlatform/OKRManager锛夛紝鏂板src/utils/csvImport.ts閫氱敤CSV瀵煎叆宸ュ叿锛圔OM/寮曞彿/閫楀彿杞箟/瀛楁鏄犲皠/unwrap瑙ｅ寘锛夛紝淇15涓ā鍧楀亣瀵煎叆鍔熻兘锛堟樉绀烘垚鍔熶絾鏈疄闄呭鍏ワ級涓虹湡瀹濩SV瑙ｆ瀽+API璋冪敤锛屽悗绔疨OST /api/import琛ュ厖13涓狧R妯″潡閰嶇疆锛坅nalytics_reports/compensatory_leaves/doubling_labs/hr_office_automation/hr_risks/hr_kanban_tasks/hr_reports/incentive_plans/raci_matrix/efficiency_records/pilot_projects/payroll_records/hr_three_pillars锛夛紝Analytics 3涓粺璁″瓧娈碉紙realtime/dashboardCount/chartCount锛変粠纭紪鐮?鏀逛负浠庢姤琛ㄥ垪琛ㄥ疄鏃惰绠?|
-| v0.2.62 | 2026-09-05 | 瓒呯绔疪epository鎶借薄灞?鍏ㄩ噺鏋舵瀯娌荤悊+TenantAdminService杩佺Щ锛氳秴绠＄6鏂囦欢缂栫爜锛圛AdminRepository/SQLiteAdminRepository/HttpAdminRepository/AdminService/admin璺敱/AdminConsole鍓嶇锛夛紝AdminService闆禨QL闆禿b寮曠敤锛屾湭鏉QLite鈫扝TTP杩佺Щ涓氬姟灞傞浂鏀瑰姩锛涘叏閲忓姛鑳芥灦鏋勬⒊鐞唙1-v3锛?8鍓嶇璺敱/66鍚庣璺敱/217琛?208缁勪欢/84 Service锛夛紝S/H/M/L绾ч棶棰樺叏閲忎慨澶嶏紱P0鏂偣淇锛圧iskManagement鍝嶅簲鏍煎紡8绔偣銆丗inanceHub 4绔偣銆乸aymentNotifyHandler鎸傝浇銆丩iveCommerce 10鍐呰仈SQL杩佺ЩService锛夛紱TenantAdminService鍏ㄩ噺閲嶅啓+16绔偣杩佺Щ锛坈amelCase鎺ュ彛+杞垹闄?澧炲己淇濇姢+浣跨敤閲忚绠楋級锛?0鏂规硶18琚矾鐢辫皟鐢ㄦ棤姝讳唬鐮侊紱浼氬憳瀹氫环璋冩暣Team楼999/Enterprise楼5200璧凤紱鍏ㄩ」鐩患鍚堝仴搴峰害5鏄?|
-| v0.2.61 | 2026-09-04 | 鐧藉睆鏍瑰洜淇+浼氬憳浣撶郴閲嶆瀯+9椤筨ug鍏ㄩ噺淇锛氫慨澶島pdater璇潃娓叉煋杩涚▼瀵艰嚧鐧藉睆锛坔asPendingUpdates娣诲姞鐗堟湰妫€鏌ャ€乧leanupOldVersionProcesses娣诲姞鐖惰繘绋婸ID妫€鏌ワ級锛涗細鍛樹綋绯婚噸鏋勪负4妗ｅ畾浠凤紙Free/Pro楼299/Team楼1299/Enterprise楼6800璧凤級锛岀Щ闄PI棰濆害/瀛樺偍閰嶉/鏁伴噺闄愬埗锛涗慨澶岰onversionHub璇硶閿欒銆丼killCenter .filter閿欒銆佸绉熸埛鏃ф。浣嶆畫鐣欑瓑9椤筨ug |
-| v0.2.60 | 2026-09-03 | P0-P3鍔熻兘淇+绉熸埛璁¤垂妯″潡+API鍝嶅簲鏍煎紡缁熶竴+CI璺敱妫€鏌ラ泦鎴愶細28鏂囦欢淇锛岀敓浜х幆澧?0椤甸潰娴嬭瘯閫氳繃锛岀鎴疯璐硅〃+鏀粯缃戝叧manual妯″紡锛岃储鍔℃礊瀵熺湡瀹炴暟鎹帴鍏?2涓鐐?|
-| v0.2.59 | 2026-09-02 | P1鎵规浜旀ā鍧楁牴绔仈璋冮獙璇侊細鍒跺害绠＄悊锛堟柟妗堝満鏅?鐘舵€佹満锛夈€佸憳宸?鑰冨嫟璁板綍銆並PI鎸囨爣搴?鏂规/缁撴灉涓夌骇闂幆銆佺哗鏁堚啋璋冭柂鏁版嵁鑱斿姩銆丠R-AI瀵硅瘽鎶ュ憡涓庢礊瀵熼娴嬨€佽柂閰噸绠椾笌璋冭柂寤鸿鎻愪氦锛涗慨澶峉QLite涓ユ牸妯″紡IFNULL鍙屽紩鍙枫€佽法妯″潡鐘舵€佹灇涓惧榻愩€乭ydrate缁熻瀛楁camelCase鏄犲皠锛涘叏閾捐矾E2E 80鏂█+10琛ㄨ惤搴撴牳楠岄€氳繃 |
-| v0.2.58 | 2026-09-01 | 鍔熻兘瀹屽杽100%锛?0涓鑸」鍏ㄩ儴瀹屾垚锛?9涓瓙鍔熻兘鍏ㄩ儴瀹炵幇锛涙柊澧?涓ā鍧楋紙鐩存挱鐢靛晢6Tab/21API/4琛ㄣ€佽法澧冪數鍟?0Tab/15API/2琛ㄣ€佸钩鍙板鎺?Tab/21API/3琛ㄣ€佸璇濆伐浣滄祦5Tab/22API/4琛級锛涙€ц兘浼樺寲锛堟瀯寤烘椂闂?30.5%锛屼骇鐗╀綋绉?47.6%锛夛紱鏁版嵁搴?96寮犺〃锛?,017涓狝PI绔偣锛涘墠鍚庣tsc闆堕敊璇紱娓叉煋寮傚父鍏ㄩ潰淇锛涘璇濇鍥炬爣琛ラ綈锛涙闈ogo鏇挎崲 |
-| v0.2.57 | 2026-08-30 | 鎬ц兘浼樺寲涓撻」锛氳秴澶у瀷缁勪欢鎷嗗垎锛圥rocurementHub绛?0鏂囦欢閲嶆瀯锛?360/-903琛岋級銆丯+1鏌ヨ浼樺寲銆佸唴鑱斿嚱鏁颁紭鍖栧噺灏戦噸娓叉煋銆乽seCallback瀵煎叆琛ュ叏銆乤uthMiddleware鍒悕鍏煎銆佽娉曢敊璇慨澶?|
-| v0.2.55 | 2026-08-29 | 鍏ㄩ噺妯℃嫙鏁版嵁鏇挎崲鍗囩骇锛?涓牳蹇冧笟鍔℃ā鍧楀畬鎴愬悗绔疉PI瀵规帴銆丱GSM褰掑洜鍔熻兘瀹屽杽锛坓etAttribution/runAutoAttribution锛夈€乀ypeScript绫诲瀷绯荤粺鍏ㄩ潰瀵归綈銆佸弻婧愰儴缃叉柟娉曡鏈€楂樻墽琛岃鍒欒惤鍦?|
-| v0.2.54 | 2026-08-29 | 鍏ㄩ噺妯℃嫙鏁版嵁鏇挎崲鍗囩骇锛?7涓牳蹇冧笟鍔℃ā鍧楀畬鎴愬悗绔疉PI瀵规帴锛堝闀垮紩鎿庛€佽浆鍖栦笌杩愯惀銆佸伐浣滄祦缂栨帓銆佹暟鎹垎鏋愩€佽柂閰绠椼€佷换鍔＄湅鏉裤€佽皟浼戠鐞嗐€佸€嶅瀹為獙瀹ゃ€丠R鏁堢巼銆丠R婵€鍔便€丠R璇曠偣銆佸叏鍛極A銆丷ACI鐭╅樀銆丠R鎶ュ憡涓績銆侀闄╅璀︺€佷笁鏀煴銆丱GSM鐩爣鏍戯級銆丱GSM褰掑洜鍔熻兘瀹屽杽銆乀ypeScript绫诲瀷绯荤粺鍏ㄩ潰瀵归綈 |
-| v0.2.50 | 2026-08-28 | 閲嶅ぇ鏇存柊锛欻R绠＄悊宸︿晶鍨傜洿瀵艰埅鏍忛噸鏋勶紙6澶у垎缁?5瀛愬姛鑳斤級銆佸璇濇鏍峰紡瀹屽叏瀵归綈workbuddy銆佸簲鐢ㄥ唴鑷姩鏇存柊瓒呮椂淇锛堝弻婧愬揩閫熻秴鏃?妫€鏌ヤ腑鐘舵€侊級銆佷紒涓氱敤鎴锋潈闄愬垎閰嶅榻愰拤閽夛紙5绾ц鑹?2鍔熻兘妯″潡+4绾ф暟鎹潈闄愶級銆佸叏闈㈡覆鏌撳紓甯镐慨澶嶏紙toLocaleString+map閬嶅巻鍏?02鏂囦欢锛?|
-| v0.2.4 | 2026-08-06 | 璺ㄨ亴鑳借皟璇曚慨澶嶏細鐩存挱搴撳瓨鎵ｅ噺閫昏緫bug銆佷簨鍔″畬鏁存€с€佸璁℃棩蹇椼€佹暟鎹繃婊や紭鍖?|
-| v0.2.3 | 2026-08-05 | 璇勫鎶ュ憡 B1-B8 缂洪櫡淇闂幆锛歴erver strict 鍔犲浐銆佽法绉熸埛娉勬紡淇銆佸墠绔痑11y銆佽鐩栫巼闂ㄧ |
-| v0.2.0 | 2026-07-30 | 鍟嗕笟鍖栧崌绾э細璁稿彲璇佺郴缁熴€佽闃呯鐞嗐€佽瘯鐢ㄦ湡銆侀厤棰濊拷韪€佽澶囩粦瀹氥€佸璁℃棩蹇椼€佹毚鍔涚牬瑙ｉ槻鎶?|
-| v0.1.2 | 2026-07-30 | 淇绌虹櫧椤甸潰锛歏ite base璺緞銆丆SP瀛椾綋鍩熴€佸悗绔湇鍔″閿?|
-| v0.1.1 | 2026-07-29 | 瀹夊叏淇锛氱鎴烽殧绂诲寮恒€佽鍗曠姸鎬佹満瀹屽杽銆丷ACI/钖叕UPSERT淇銆乀oken鍒锋柊寰幆淇 |
-| v0.1.0 | 2026-07-29 | 棣栦釜姝ｅ紡鐗堟湰锛屽叏鏍堝疄鐜?|
+| v0.2.72 | 2026-09-15 | 七阶段系统性梳理成果落地+三大巨型组件拆分+P0性能监控+14项Bug修复：需求清单259条/竞品分析/功能策略60条/Bug治理/编码方案全量交付；BusinessChain/FinanceHubEnhanced/SkillCenter三大巨型组件拆分重构；新增启动性能面板、冷启动计时埋点、DB健康度面板3个P0功能；修复3个High级500崩溃、7个400字段不匹配、路由缺失、错误处理等14个Bug；8个写入接口Zod schema修复；BUG-002(hr-summary列名错误)、BUG-003(business-summary不存在的JOIN)修复；冷启动骨架屏、移动端响应式P0功能落地；端到端实测验证通过 |
+| v0.2.71 | 2026-09-14 | 版本号统一管理+数据备份全链路+电商HR场景模板+开发者平台隔离+连接器约束修复：version.ts多路径探测版本号、redeploy.py复制根package.json修复app.asar版本滞后；备份API路由(/api/backup/create/list/restore)+BackupManager UI集成Settings+自动定时备份(每天/保留30天)；EcommerceHRTemplates(大促排班+计件薪酬)集成HRMS；开发者超管后台admin+isDevMachine双重防护；connectors表CHECK约束5→26种+schema v2→v3迁移；API路径常量统一(apiPaths.ts)；BUG防护文档建立 |
+| v0.2.66 | 2026-09-10 | 电商HR洞察场景端到端全量验证+全量功能修复：55个API节点100%通过、10个CDP页面100%正常渲染、零服务端500错误；5条业务流全部跑通（HR核心流/电商闭环流/业绩倍增流/直播运营流/智能工作流流）；修复KPI方案创建需含indicators关联、薪酬字段名下划线命名(employee_id/employee_name)、订单items需unitPrice、售后returnItems需unitPrice、直播场次plannedStart字段、售后收货需order_id存在、记忆上下文字段名key/value等参数对齐问题；采购入库receipts格式、订单状态机4态流转、售后状态机3态流转、库存自动联动(采购入库+售后回补)全部验证通过 |
+| v0.2.64 | 2026-09-08 | 全量mock数据清理+通用CSV导入框架+15处假导入修复+Analytics统计修复+后端13模块注册：移除生产代码中所有mock演示数据（WebhookManager/DataIntegrationCenter/ApiOpenPlatform/OKRManager），新增src/utils/csvImport.ts通用CSV导入工具（BOM/引号/逗号转义/字段映射/unwrap解包），修复15个模块假导入功能（显示成功但未实际导入）为真实CSV解析+API调用，后端POST /api/import补充13个HR模块配置（analytics_reports/compensatory_leaves/doubling_labs/hr_office_automation/hr_risks/hr_kanban_tasks/hr_reports/incentive_plans/raci_matrix/efficiency_records/pilot_projects/payroll_records/hr_three_pillars），Analytics 3个统计字段（realtime/dashboardCount/chartCount）从硬编码0改为从报表列表实时计算 |
+| v0.2.62 | 2026-09-05 | 超管端Repository抽象层+全量架构治理+TenantAdminService迁移：超管端6文件编码（IAdminRepository/SQLiteAdminRepository/HttpAdminRepository/AdminService/admin路由/AdminConsole前端），AdminService零SQL零db引用，未来SQLite→HTTP迁移业务层零改动；全量功能架构梳理v1-v3（28前端路由/66后端路由/217表/208组件/84 Service），S/H/M/L级问题全量修复；P0断点修复（RiskManagement响应格式8端点、FinanceHub 4端点、paymentNotifyHandler挂载、LiveCommerce 10内联SQL迁移Service）；TenantAdminService全量重写+16端点迁移（camelCase接口+软删除+增强保护+使用量计算），20方法18被路由调用无死代码；会员定价调整Team¥999/Enterprise¥5200起；全项目综合健康度5星 |
+| v0.2.61 | 2026-09-04 | 白屏根因修复+会员体系重构+9项bug全量修复：修复updater误杀渲染进程导致白屏（hasPendingUpdates添加版本检查、cleanupOldVersionProcesses添加父进程PID检查）；会员体系重构为4档定价（Free/Pro¥299/Team¥1299/Enterprise¥6800起），移除API额度/存储配额/数量限制；修复ConversionHub语法错误、SkillCenter .filter错误、多租户旧档位残留等9项bug |
+| v0.2.60 | 2026-09-03 | P0-P3功能修复+租户计费模块+API响应格式统一+CI路由检查集成：28文件修复，生产环境30页面测试通过，租户计费表+支付网关manual模式，财务洞察真实数据接入12个端点 |
+| v0.2.59 | 2026-09-02 | P1批次五模块根端联调验证：制度管理（方案场景/状态机）、员工/考勤记录、KPI指标库/方案/结果三级闭环、绩效→调薪数据联动、HR-AI对话报告与洞察预测、薪酬重算与调薪建议提交；修复SQLite严格模式IFNULL双引号、跨模块状态枚举对齐、hydrate统计字段camelCase映射；全链路E2E 80断言+10表落库核验通过 |
+| v0.2.58 | 2026-09-01 | 功能完善100%：30个导航项全部完成，89个子功能全部实现；新增4个模块（直播电商6Tab/21API/4表、跨境电商10Tab/15API/2表、平台对接7Tab/21API/3表、对话工作流5Tab/22API/4表）；性能优化（构建时间-30.5%，产物体积-47.6%）；数据库196张表，1,017个API端点；前后端tsc零错误；渲染异常全面修复；对话框图标补齐；桌面Logo替换 |
+| v0.2.57 | 2026-08-30 | 性能优化专项：超大型组件拆分（ProcurementHub等10文件重构，+360/-903行）、N+1查询优化、内联函数优化减少重渲染、useCallback导入补全、authMiddleware别名兼容、语法错误修复 |
+| v0.2.55 | 2026-08-29 | 全量模拟数据替换升级，7个核心业务模块完成后端API对接、OGSM归因功能完善（getAttribution/runAutoAttribution）、TypeScript类型系统全面对齐、双源部署方法论最高执行规则落地 |
+| v0.2.54 | 2026-08-29 | 全量模拟数据替换升级，17个核心业务模块完成后端API对接（增长引擎、转化与运营、工作流编排、数据分析、薪酬计算、任务看板、调休管理、倍增实验室、HR效率、HR激励、HR试点、全员OA、RACI矩阵、HR报告中心、风险预警、三支柱、OGSM目标树）、OGSM归因功能完善、TypeScript类型系统全面对齐 |
+| v0.2.50 | 2026-08-28 | 重大更新：HR管理左侧垂直导航栏重构（6大分组35子功能）、对话框样式完全对齐workbuddy、应用内自动更新超时修复（双源快速超时+检查中状态）、企业用户权限分配对齐钉钉（5级角色22功能模块+4级数据权限）、全面渲染异常修复（toLocaleString+map遍历共102文件） |
+| v0.2.4 | 2026-08-06 | 跨职能调试修复：直播库存扣减逻辑bug、事务完整性、审计日志、数据过滤优化 |
+| v0.2.3 | 2026-08-05 | 评审报告 B1-B8 缺陷修复闭环：server strict 加固、跨租户泄漏修复、前端a11y、覆盖率门禁 |
+| v0.2.0 | 2026-07-30 | 商业化升级：许可证系统、订阅管理、试用期、配额追踪、设备绑定、审计日志、暴力破解防护 |
+| v0.1.2 | 2026-07-30 | 修复空白页面：Vite base路径、CSP字体域、后端服务容错 |
+| v0.1.1 | 2026-07-29 | 安全修复：租户隔离增强、订单状态机完善、RACI/薪酬UPSERT修复、Token刷新循环修复 |
+| v0.1.0 | 2026-07-29 | 首个正式版本，全栈实现 |
 
-## 鍙嶉涓庢敮鎸?
+## 反馈与支持
 
-- 闂鍙嶉锛歔GitHub Issues](https://github.com/kule-2025/vorzai-public/issues)
-- 閭锛歬ing2030@foxmail.com
+- 问题反馈：[GitHub Issues](https://github.com/kule-2025/vorzai-public/issues)
+- 邮箱：king2030@foxmail.com
 
 ## License
 
-Proprietary 鈥?漏 2026 Vorzai Team. All rights reserved.
+Proprietary — © 2026 Vorzai Team. All rights reserved.
