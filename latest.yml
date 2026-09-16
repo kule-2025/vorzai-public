@@ -1,13 +1,8 @@
-version: 0.2.73
+version: 0.2.74
 files:
-  - url: Vorzai.Setup.0.2.73.exe
-    sha512: JxnbenbYF1f+9rrWCIwwOC/g5Tl4vVREqCxoTzdZPSqOJWCXlqBoVBGdhzvOwvWDoN1/Av89JxLwv9PuutaFlQ==
-    signature: Vorzai.Setup.0.2.73.exe.sig
-    size: 346199271
-path: Vorzai.Setup.0.2.73.exe
-sha512: JxnbenbYF1f+9rrWCIwwOC/g5Tl4vVREqCxoTzdZPSqOJWCXlqBoVBGdhzvOwvWDoN1/Av89JxLwv9PuutaFlQ==
-sha256: cca81caadd701f2a5c684355306008eea1cd13ed5b7b56871f097a655d5a9f38
-releaseDate: 2026-09-15T02:50:28.224Z
-stagingPercentage: 100
-minisign_pubkey: -----BEGINPUBLICKEY-----MCowBQYDK2VwAyEA4JFp98loNrBzbXGQXC8YcutERy5F3YAc7y7XptTaMcc=-----ENDPUBLICKEY-----
-downloadUrl: https://github.com/kule-2025/vorzai-public/releases/download/v0.2.73/Vorzai.Setup.0.2.73.exe
+  - url: Vorzai-Setup-0.2.74.exe
+    sha512: GVG2fVUKGfC2/w4wBW4CEv3lRcvuH0mB6ttaDsw822zOfqbkIt0SLhkojk0ObZraBDydKRqe/1IFTSq/41sbEw==
+    size: 90771411
+path: Vorzai-Setup-0.2.74.exe
+sha512: GVG2fVUKGfC2/w4wBW4CEv3lRcvuH0mB6ttaDsw822zOfqbkIt0SLhkojk0ObZraBDydKRqe/1IFTSq/41sbEw==
+releaseDate: '2026-09-16T12:39:27.228Z'
