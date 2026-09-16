@@ -1,4 +1,4 @@
-# Vorzai v0.2.73
+# Vorzai v0.2.74
 
 > 面向电商企业的人力资源管理与业务解决方案桌面应用
 
@@ -8,9 +8,9 @@
 
 点击下方链接下载安装包：
 
-**[Vorzai Setup 0.2.73.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.73/Vorzai.Setup.0.2.73.exe)**
+**[Vorzai Setup 0.2.74.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.74/Vorzai.Setup.0.2.74.exe)**
 
-- 文件大小：约 330 MB
+- 文件大小：约 90 MB
 - 系统要求：Windows 10/11 (x64)
 - 安装方式：双击运行，按向导完成安装
 
@@ -37,10 +37,10 @@
 **方法 3：命令行下载**
 ```bash
 # 使用 curl（支持断点续传）
-curl -L -C - -o Vorzai.Setup.0.2.73.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.73/Vorzai.Setup.0.2.73.exe"
+curl -L -C - -o Vorzai.Setup.0.2.74.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.74/Vorzai.Setup.0.2.74.exe"
 
 # 或使用 wget
-wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.73/Vorzai.Setup.0.2.73.exe"
+wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.74/Vorzai.Setup.0.2.74.exe"
 ```
 
 **方法 4：GitHub 加速镜像**
@@ -106,7 +106,8 @@ Vorzai 是一款专为电商企业设计的智能桌面助手，覆盖以下核�
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
-| v0.2.72 | 2026-09-15 | 七阶段系统性梳理成果落地+三大巨型组件拆分+P0性能监控+14项Bug修复：需求清单259条/竞品分析/功能策略60条/Bug治理/编码方案全量交付；BusinessChain/FinanceHubEnhanced/SkillCenter三大巨型组件拆分重构；新增启动性能面板、冷启动计时埋点、DB健康度面板3个P0功能；修复3个High级500崩溃、7个400字段不匹配、路由缺失、错误处理等14个Bug；8个写入接口Zod schema修复；BUG-002(hr-summary列名错误)、BUG-003(business-summary不存在的JOIN)修复；冷启动骨架屏、移动端响应式P0功能落地；端到端实测验证通过 |
+| v0.2.74 | 2026-09-16 | P0/P1全量修复+性能优化+功能增强+安装包体积大幅缩减：后端errorHandler唯一键冲突映射409、normalizeBindParams统一undefined→null兜底、llm路由asyncHandler补全；前端BusinessChain 23项类型错误修复、ApiOpenPlatform可选链修复；全局Toast机制修复(87处静默调用生效)+97处alert统一替换；ErrorBoundary补齐返回首页/复制错误；API客户端403/5xx友好文案；移动端侧边栏阻断性修复；electron-builder白名单化(安装包330MB→约90MB，排除525MB开发垃圾+未使用原生模块)；settingsService配置内存缓存+批量事务；token.txt安全清理 |
+| v0.2.72 | 2026-09-15 | 七阶段系统性梳理成果落地+三大巨型组件拆分+P0性能监控+14项Bug修复
 | v0.2.71 | 2026-09-14 | 版本号统一管理+数据备份全链路+电商HR场景模板+开发者平台隔离+连接器约束修复：version.ts多路径探测版本号、redeploy.py复制根package.json修复app.asar版本滞后；备份API路由(/api/backup/create/list/restore)+BackupManager UI集成Settings+自动定时备份(每天/保留30天)；EcommerceHRTemplates(大促排班+计件薪酬)集成HRMS；开发者超管后台admin+isDevMachine双重防护；connectors表CHECK约束5→26种+schema v2→v3迁移；API路径常量统一(apiPaths.ts)；BUG防护文档建立 |
 | v0.2.66 | 2026-09-10 | 电商HR洞察场景端到端全量验证+全量功能修复：55个API节点100%通过、10个CDP页面100%正常渲染、零服务端500错误；5条业务流全部跑通（HR核心流/电商闭环流/业绩倍增流/直播运营流/智能工作流流）；修复KPI方案创建需含indicators关联、薪酬字段名下划线命名(employee_id/employee_name)、订单items需unitPrice、售后returnItems需unitPrice、直播场次plannedStart字段、售后收货需order_id存在、记忆上下文字段名key/value等参数对齐问题；采购入库receipts格式、订单状态机4态流转、售后状态机3态流转、库存自动联动(采购入库+售后回补)全部验证通过 |
 | v0.2.64 | 2026-09-08 | 全量mock数据清理+通用CSV导入框架+15处假导入修复+Analytics统计修复+后端13模块注册：移除生产代码中所有mock演示数据（WebhookManager/DataIntegrationCenter/ApiOpenPlatform/OKRManager），新增src/utils/csvImport.ts通用CSV导入工具（BOM/引号/逗号转义/字段映射/unwrap解包），修复15个模块假导入功能（显示成功但未实际导入）为真实CSV解析+API调用，后端POST /api/import补充13个HR模块配置（analytics_reports/compensatory_leaves/doubling_labs/hr_office_automation/hr_risks/hr_kanban_tasks/hr_reports/incentive_plans/raci_matrix/efficiency_records/pilot_projects/payroll_records/hr_three_pillars），Analytics 3个统计字段（realtime/dashboardCount/chartCount）从硬编码0改为从报表列表实时计算 |
