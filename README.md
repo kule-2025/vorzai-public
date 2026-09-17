@@ -1,4 +1,4 @@
-# Vorzai v0.2.74
+# Vorzai v0.2.81
 
 > 面向电商企业的人力资源管理与业务解决方案桌面应用
 
@@ -8,7 +8,7 @@
 
 点击下方链接下载安装包：
 
-**[Vorzai Setup 0.2.74.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.74/Vorzai.Setup.0.2.74.exe)**
+**[Vorzai Setup 0.2.81.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.81/Vorzai-Setup-0.2.81.exe)**
 
 - 文件大小：约 90 MB
 - 系统要求：Windows 10/11 (x64)
@@ -37,10 +37,10 @@
 **方法 3：命令行下载**
 ```bash
 # 使用 curl（支持断点续传）
-curl -L -C - -o Vorzai.Setup.0.2.74.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.74/Vorzai.Setup.0.2.74.exe"
+curl -L -C - -o Vorzai-Setup-0.2.81.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.81/Vorzai-Setup-0.2.81.exe"
 
 # 或使用 wget
-wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.74/Vorzai.Setup.0.2.74.exe"
+wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.81/Vorzai-Setup-0.2.81.exe"
 ```
 
 **方法 4：GitHub 加速镜像**
@@ -106,6 +106,13 @@ Vorzai 是一款专为电商企业设计的智能桌面助手，覆盖以下核�
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| v0.2.81 | 2026-09-17 | 数据库完整性保护机制5项（外键约束/事务原子性/写入前校验/崩溃恢复/定期一致性巡检）+全量bug修复27处+功能增强4项+性能优化4方向（查询优化/缓存策略/批量操作/资源释放） |
+| v0.2.80 | 2026-09-17 | 容错与断点恢复机制全链路落地：新增task_checkpoints表(租户隔离)+9个断点管理API+前端useCheckpoint Hook+TaskResumeCard恢复组件+AI智能页面集成(分析3步/报告2步断点)+瞬时错误自动重试(3次指数退避)+老库v7→v8迁移。断点API端到端11项测试全部通过，故障后从断点续跑无需重跑全流程 |
+| v0.2.79 | 2026-09-17 | 全量代码审查205项问题+25项关键修复：认证绕过修复(refresh token不可当access token)、SSE Token泄露修复(token从URL移至Authorization头)、财务洞察8张卡404修复(补齐端点别名)、HRMS 44处空catch补toast、支付回调不更新订单修复、主按钮恢复品牌橙#f08a14、5个财务动作端点补全、响应格式统一、认证请求45s缓存、键盘无障碍焦点环。功能验证1213端点枚举427 GET通过零5xx。UI/UX评分62→优化后组件系统统一 |
+| v0.2.78 | 2026-09-17 | HR智能页面永久loading死锁修复+AI智能重新分析无反馈修复+全量代码扫描6项修复：HRStrategy.tsx useState(true)死锁改为false+10s超时兜底+4子视图15s超时；HRAIIntelligenceCenter补catch块+分级错误处理(网络/权限/404/500)+0条洞察友好引导+20s超时+按钮disabled防重复；EmployeeProfileManager空catch补toast；ConnectorsMarket补try/catch+loading+空状态；client.ts importData路径修正；OGSMBoard/CrossBorderHub/PlatformHub三处useEffect加卸载清理。自上而下验证95/95项通过 |
+| v0.2.77 | 2026-09-17 | 安全审计16项风险全量修复（15项代码修复+1项已知项）：生产CSP移除unsafe-inline、工作流条件测试new Function()加白名单、字段加密独立密钥文件(不再回退JWT)、备份列表租户隔离、密码重置令牌5分钟一次性、4个脚本硬编码凭证清理、demo路由参数化SQL、备份加密CBC→GCM(向后兼容)、bcrypt 10→12轮、app:getPath白名单、支付回调防重放+审计日志 |
+| v0.2.76 | 2026-09-17 | 六大问题全面修复+功能增强：自动更新404修复(Gitee仅拉元数据安装包走GitHub)、平台对接页x.map崩溃修复(unwrapArray+19处数组守卫)、对话式工作流按钮无响应修复(对话阶段隐藏概览+自动滚动)、全局5个无onClick按钮修复、新建商品AI辅助填充(复用/api/llm/chat无硬编码key)、采购供应链新增新建采购单表单+删除接口、登录持久化+数据隔离验证正常 |
+| v0.2.75 | 2026-09-16 | 登录失效根因全量修复+22项bug排查修复+安全加固：token过期2h→7d/30d→90d、refreshToken硬编码bug修复、启动静默刷新+请求前预刷新+互斥锁防并发、记住密码+邮箱持久化(base64混淆)、登录失效醒目banner；后端修复严重SQL注入(导出表名白名单)、租户隔离漏洞(跨租户写消息)、scopeQuery死代码WHERE AND、7处error信封不一致；前端修复TenantEnhancePanel 5处写操作未检查success静默失败；Electron修复preload writeFile丢参/auto-updater状态恒真/IPC通道断链/无双实例锁/图标路径错误 |
 | v0.2.74 | 2026-09-16 | P0/P1全量修复+性能优化+功能增强+安装包体积大幅缩减：后端errorHandler唯一键冲突映射409、normalizeBindParams统一undefined→null兜底、llm路由asyncHandler补全；前端BusinessChain 23项类型错误修复、ApiOpenPlatform可选链修复；全局Toast机制修复(87处静默调用生效)+97处alert统一替换；ErrorBoundary补齐返回首页/复制错误；API客户端403/5xx友好文案；移动端侧边栏阻断性修复；electron-builder白名单化(安装包330MB→约90MB，排除525MB开发垃圾+未使用原生模块)；settingsService配置内存缓存+批量事务；token.txt安全清理 |
 | v0.2.72 | 2026-09-15 | 七阶段系统性梳理成果落地+三大巨型组件拆分+P0性能监控+14项Bug修复
 | v0.2.71 | 2026-09-14 | 版本号统一管理+数据备份全链路+电商HR场景模板+开发者平台隔离+连接器约束修复：version.ts多路径探测版本号、redeploy.py复制根package.json修复app.asar版本滞后；备份API路由(/api/backup/create/list/restore)+BackupManager UI集成Settings+自动定时备份(每天/保留30天)；EcommerceHRTemplates(大促排班+计件薪酬)集成HRMS；开发者超管后台admin+isDevMachine双重防护；connectors表CHECK约束5→26种+schema v2→v3迁移；API路径常量统一(apiPaths.ts)；BUG防护文档建立 |
