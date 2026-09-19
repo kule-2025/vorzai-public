@@ -1,9 +1,9 @@
-version: 0.2.83
+version: 0.2.84
 files:
-  - url: Vorzai-0.2.83-Setup.exe
-    sha512: WoqdhMPOCSmr1EQlP/Lk+KdEZbgu06k35sY1InsVXMVi52i259SOeWVKUyvUhJdxzyhBy0q6l8tfP1gMSw6sRw==
-    size: 90294557
-path: Vorzai-0.2.83-Setup.exe
-sha512: WoqdhMPOCSmr1EQlP/Lk+KdEZbgu06k35sY1InsVXMVi52i259SOeWVKUyvUhJdxzyhBy0q6l8tfP1gMSw6sRw==
-releaseDate: '2026-09-18T14:33:45.891Z'
-downloadUrl: https://github.com/kule-2025/vorzai-public/releases/download/v0.2.83/Vorzai-0.2.83-Setup.exe
+  - url: Vorzai-0.2.84-Setup.exe
+    sha512: u6K8Yi4MLHlZqshdjYgvn/Gn/yz7QDnf3JbKJZA2NebCsllNXszE3LQjhxjgSuaABKM8FKKZYh3f+bHXKp4lNg==
+    size: 90295102
+path: Vorzai-0.2.84-Setup.exe
+sha512: u6K8Yi4MLHlZqshdjYgvn/Gn/yz7QDnf3JbKJZA2NebCsllNXszE3LQjhxjgSuaABKM8FKKZYh3f+bHXKp4lNg==
+releaseDate: '2026-09-19T01:20:02.597Z'
+downloadUrl: https://github.com/kule-2025/vorzai-public/releases/download/v0.2.84/Vorzai-0.2.84-Setup.exe
