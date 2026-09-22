@@ -1,9 +1,9 @@
-version: 0.2.85
+version: 0.2.86
 files:
-  - url: Vorzai-0.2.85-Setup.exe
-    sha512: CsDPetGEqf6oy2hRiDIkToAbZZdER2Lqz97lflD9zbVZ3IfGIg4R/O1SgPnaUnwg/+i8+od6r+iAG8L/9WIraw==
-    size: 90300724
-path: Vorzai-0.2.85-Setup.exe
-sha512: CsDPetGEqf6oy2hRiDIkToAbZZdER2Lqz97lflD9zbVZ3IfGIg4R/O1SgPnaUnwg/+i8+od6r+iAG8L/9WIraw==
-releaseDate: '2026-09-20T06:42:10.155Z'
+  - url: Vorzai-0.2.86-Setup.exe
+    sha512: PIXdUVR+/g3B26V3/AUbnmU3adpPfZbJtI2W3T6yppUtJ5Fxh6RO5Biwavk7MyB8N1HtPxMvBos/4Q8ZefkZsA==
+    size: 90329802
+path: Vorzai-0.2.86-Setup.exe
+sha512: PIXdUVR+/g3B26V3/AUbnmU3adpPfZbJtI2W3T6yppUtJ5Fxh6RO5Biwavk7MyB8N1HtPxMvBos/4Q8ZefkZsA==
+releaseDate: '2026-09-22T00:03:57.997Z'
 stagingPercentage: 100
