@@ -1,4 +1,4 @@
-# Vorzai v0.2.85
+# Vorzai v0.2.86
 
 > 面向电商企业的人力资源管理与业务解决方案桌面应用
 
@@ -8,7 +8,7 @@
 
 点击下方链接下载安装包：
 
-**[Vorzai 0.2.85 Setup.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.85/Vorzai-0.2.85-Setup.exe)**
+**[Vorzai 0.2.86 Setup.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.86/Vorzai-0.2.86-Setup.exe)**
 
 - 文件大小：约 86 MB
 - 系统要求：Windows 10/11 (x64)
@@ -16,7 +16,7 @@
 
 ### 国内镜像（Gitee）
 
-如果 GitHub 下载速度较慢，应用内自动更新会通过 Gitee raw 通道获取 `latest.yml` 更新元数据：
+如果 GitHub 下载速度较慢，应用内自动更新会通过 Gitee raw 通道获取 latest.yml 更新元数据：
 
 - Gitee raw 通道：`https://gitee.com/king2030/vorzai/raw/main/latest.yml`
 - 该通道仅提供更新元数据（版本号、sha512、下载地址），实际安装包仍从 GitHub Release 下载
@@ -37,10 +37,10 @@
 **方法 3：命令行下载**
 ```bash
 # 使用 curl（支持断点续传）
-curl -L -C - -o Vorzai-0.2.85-Setup.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.85/Vorzai-0.2.85-Setup.exe"
+curl -L -C - -o Vorzai-0.2.86-Setup.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.86/Vorzai-0.2.86-Setup.exe"
 
 # 或使用 wget
-wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.85/Vorzai-0.2.85-Setup.exe"
+wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.86/Vorzai-0.2.86-Setup.exe"
 ```
 
 **方法 4：GitHub 加速镜像**
@@ -99,7 +99,8 @@ Vorzai 是一款专为电商企业设计的智能桌面助手，覆盖以下核�
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
-| v0.2.85 | 2026-09-20 | 稳定构建迭代：基于 v0.2.84 的性能优化与功能增强重新打包发布，双源自动更新链路一致性加固，安装包完整性校验对齐 |
+| v0.2.86 | 2026-09-22 | 8 项遗留项修复（agent/tenant RBAC 补门禁、dataExport 错误契约统一、appStore 全局拉取、筛选回调、记住密码安全降级、死代码清理、搜索防抖）；全量代码验证修复 10 个 P0 + 15 个 P1（调休、ZRACI、订单、三支柱、增长引擎、财务逻辑反转、LLM 列表、直播服务类型错误等）；前后端 tsc 0 错误后重新打包 |
+| v0.2.85 | 2026-09-21 | 稳定构建迭代：基于 v0.2.84 的性能优化与功能增强重新打包发布，双源自动更新链路一致性加固，安装包完整性校验对齐 |
 | v0.2.84 | 2026-09-20 | 性能与体验优化：新增人效驾驶舱（人均 GMV、人均单量概览）；高频业务列表加载提速、消除重复查询；启动冷启动优化；数据完整性保护与双源自动更新链路加固，安装包完整性校验对齐 |
 | v0.2.83 | 2026-09-18 | 品牌标识全量替换为 v11「小写 v + 大写 Z 咬合闭环」monogram：统一矢量图形标（透明底琥珀金渐变，浅深主题通用）+ 小写 vorzai 字标；应用内图形标改为内联渲染，修复打包环境下图标路径解析异常；桌面/任务栏图标透明角补齐品牌色，修复偶发白底/黑底方块；安装包剔除历史品牌设计档案，包体减小 |
 | v0.2.82 | 2026-09-17 | 数据完整性保护机制落地：外键约束、事务原子性、写入前校验、崩溃恢复、定期一致性巡检；全量缺陷修复与功能增强，并在查询、缓存、批量操作、资源释放四个方向做性能优化 |
