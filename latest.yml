@@ -1,9 +1,9 @@
-version: 0.2.91
+version: 0.2.92
 files:
-  - url: Vorzai-0.2.91-Setup.exe
-    sha512: PFRuGuhl+85+0E/nrjTGKRpbONIsHwtZyor9RZwkWvAQkdhHJSlhCeZaLYjnK7cz0CyMJJnIqMnTkqBQMI7vEg==
-    size: 90288089
-path: Vorzai-0.2.91-Setup.exe
-sha512: PFRuGuhl+85+0E/nrjTGKRpbONIsHwtZyor9RZwkWvAQkdhHJSlhCeZaLYjnK7cz0CyMJJnIqMnTkqBQMI7vEg==
-releaseDate: '2026-09-26T09:53:33.297Z'
-downloadUrl: https://github.com/kule-2025/vorzai-public/releases/download/v0.2.91/Vorzai-0.2.91-Setup.exe
+  - url: Vorzai-0.2.92-Setup.exe
+    sha512: +D7LiypLFuLZJ4arDkpD7jNUD7PzdIsqv5GGWeUdE1dniv6CMkxj6+rx7IkvuRIJXZ3w/z4talHojfuSAL5gWQ==
+    size: 90288448
+path: Vorzai-0.2.92-Setup.exe
+sha512: +D7LiypLFuLZJ4arDkpD7jNUD7PzdIsqv5GGWeUdE1dniv6CMkxj6+rx7IkvuRIJXZ3w/z4talHojfuSAL5gWQ==
+releaseDate: '2026-09-26T11:23:45.251Z'
+downloadUrl: https://github.com/kule-2025/vorzai-public/releases/download/v0.2.92/Vorzai-0.2.92-Setup.exe
