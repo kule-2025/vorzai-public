@@ -1,4 +1,4 @@
-# Vorzai v0.2.91
+# Vorzai v0.2.92
 
 > 面向电商企业的人力资源管理与业务解决方案桌面应用
 
@@ -8,7 +8,7 @@
 
 点击下方链接下载安装包：
 
-**[Vorzai 0.2.91 Setup.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.91/Vorzai-0.2.91-Setup.exe)**
+**[Vorzai 0.2.92 Setup.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.92/Vorzai-0.2.92-Setup.exe)**
 
 - 文件大小：约 86 MB
 - 系统要求：Windows 10/11 (x64)
@@ -37,10 +37,10 @@
 **方法 3：命令行下载**
 ```bash
 # 使用 curl（支持断点续传）
-curl -L -C - -o Vorzai-0.2.91-Setup.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.91/Vorzai-0.2.91-Setup.exe"
+curl -L -C - -o Vorzai-0.2.92-Setup.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.92/Vorzai-0.2.92-Setup.exe"
 
 # 或使用 wget
-wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.91/Vorzai-0.2.91-Setup.exe"
+wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.92/Vorzai-0.2.92-Setup.exe"
 ```
 
 **方法 4：GitHub 加速镜像**
@@ -101,6 +101,7 @@ Vorzai 是一款专为电商企业设计的智能桌面助手，覆盖以下核�
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| v0.2.92 | 2026-09-26 | 自动更新 ENOTDIR 根因修复：检测并自动清理悬空 Junction/损坏的更新缓存目录，解决 AppData 迁移用户更新失败问题；防御性代码内置，无需用户手动干预 |
 | v0.2.91 | 2026-09-26 | 准无感更新机制落地：NSIS oneClick=true 静默安装，用户点击「重启更新」后全程无安装向导界面；双源部署最佳实践方法论与一键发布脚本上线；安装包体积优化 |
 | v0.2.85 | 2026-09-20 | 稳定构建迭代：基于 v0.2.84 的性能优化与功能增强重新打包发布，双源自动更新链路一致性加固，安装包完整性校验对齐 |
 | v0.2.84 | 2026-09-20 | 性能与体验优化：新增人效驾驶舱（人均 GMV、人均单量概览）；高频业务列表加载提速、消除重复查询；启动冷启动优化；数据完整性保护与双源自动更新链路加固，安装包完整性校验对齐 |
