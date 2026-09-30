@@ -1,6 +1,35 @@
-# Vorzai v0.2.98
+# Vorzai v0.2.99
 
 > 面向电商企业的人力资源管理与业务解决方案桌面应用
+
+## v0.2.99 更新日志
+
+### 关键问题修复
+- 修复 AI 反馈与数据导入页面加载异常（整页 404 根因修复）
+- 优惠券管理后端能力补全，前后端数据打通
+- 清理多处无后端支撑的死按钮与死方法
+
+### 业务功能真实对接
+- 侧边栏业务线筛选接入真实数据过滤
+- 蜂群协作从演示模式升级为真实执行
+- 组织权限管理补全编辑功能
+- 直播回放数据真实加载
+
+### 数据血缘打通
+- 组盘与订单建立血缘关联，组盘可一键生成订单
+- 目标管理（OGSM）与选品实体回挂，目标→选品链路闭环
+
+### 通知中心升级
+- HR、直播、目标管理三大业务域共 15 个关键事件接入统一通知中心
+- 通知实时推送（SSE 广播），通知路由安全加固
+
+### 视觉与交互
+- 侧边栏选中态统一为品牌橙色
+- 智能助手导航改版：蜂群协作 / 记忆进化 / Agent 配置 / 对话工作流
+
+### 稳定性
+- 前后端编译零错误
+- 产品成熟度持续提升
 
 ## v0.2.98 更新日志
 
@@ -111,7 +140,7 @@
 
 点击下方链接下载安装包：
 
-**[Vorzai 0.2.93 Setup.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.94/Vorzai-0.2.93-Setup.exe)**
+**[Vorzai 0.2.99 Setup.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.99/Vorzai-0.2.99-Setup.exe)**
 
 - 文件大小：约 86 MB
 - 系统要求：Windows 10/11 (x64)
@@ -140,10 +169,10 @@
 **方法 3：命令行下载**
 ```bash
 # 使用 curl（支持断点续传）
-curl -L -C - -o Vorzai-0.2.93-Setup.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.94/Vorzai-0.2.93-Setup.exe"
+curl -L -C - -o Vorzai-0.2.99-Setup.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.99/Vorzai-0.2.99-Setup.exe"
 
 # 或使用 wget
-wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.94/Vorzai-0.2.93-Setup.exe"
+wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.99/Vorzai-0.2.99-Setup.exe"
 ```
 
 **方法 4：GitHub 加速镜像**
