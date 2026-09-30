@@ -1,0 +1,10 @@
+version: 0.2.99
+files:
+  - url: Vorzai-0.2.99-Setup.exe
+    sha512: wpdUkMkEC1+SBVBQp/1g0AfyzUqclV+HpEvVC2evJPFfYibSFFTh3lujNDyxCtgWlwctVWU8gLe0x5wdRT8Okg==
+    size: 90361436
+path: Vorzai-0.2.99-Setup.exe
+sha512: wpdUkMkEC1+SBVBQp/1g0AfyzUqclV+HpEvVC2evJPFfYibSFFTh3lujNDyxCtgWlwctVWU8gLe0x5wdRT8Okg==
+sha256: 573e00079257c56254ac6620928a4808dcb90230996ae5179369394556fc5c72
+releaseDate: 2026-09-30T00:00:18.210Z
+stagingPercentage: 100
