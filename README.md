@@ -22,6 +22,18 @@
 
 电商企业全员——从老板的经营决策、运营的业务执行，到 HR 的人事管理、一线员工的考勤审批与任务协同，一套系统覆盖全岗位场景，让每个人的工作高效协同、每份贡献可衡量。
 
+## v0.2.105 更新日志
+
+### 界面视觉全面升级
+- 整体界面焕新为全新高保真设计风格，视觉质感与交互细节显著提升
+- 全新图标系统焕新上线：立体渲染图标配合细腻渐变层次与独立高光，视觉表现力更强
+- 导航栏高亮状态优化，选中项配色保持彩色并辅以投影与外发光，对比更清晰、位置一目了然
+- 全局视觉风格统一化：配色、字体、间距、圆角、阴影全面规范化，界面更整齐协调
+
+### 稳定性
+- 业务功能逻辑零改动，仅视觉呈现与交互细节优化
+- 版本稳定发布
+
 ## v0.2.104 更新日志
 
 ### UI/UX 视觉优化
@@ -311,7 +323,7 @@
 
 点击下方链接下载安装包：
 
-**[Vorzai 0.2.104 Setup.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.104/Vorzai-0.2.104-Setup.exe)**
+**[Vorzai 0.2.105 Setup.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.105/Vorzai-0.2.105-Setup.exe)**
 
 - 文件大小：约 86 MB
 - 系统要求：Windows 10/11 (x64)
@@ -340,10 +352,10 @@
 **方法 3：命令行下载**
 ```bash
 # 使用 curl（支持断点续传）
-curl -L -C - -o Vorzai-0.2.104-Setup.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.104/Vorzai-0.2.104-Setup.exe"
+curl -L -C - -o Vorzai-0.2.105-Setup.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.105/Vorzai-0.2.105-Setup.exe"
 
 # 或使用 wget
-wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.104/Vorzai-0.2.104-Setup.exe"
+wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.105/Vorzai-0.2.105-Setup.exe"
 ```
 
 **方法 4：GitHub 加速镜像**
@@ -380,6 +392,7 @@ Vorzai 内置双源自动更新机制，支持准无感更新：
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| v0.2.105 | 2026-10-04 | 界面视觉全面升级，采用全新高保真设计风格；导航与图标系统焕新；全局视觉风格统一化 |
 | v0.2.99 | 2026-09-30 | API 双重前缀修复与后端端点补全；蜂群协作真实执行；组盘→订单、OGSM→选品数据血缘打通；通知中心三域 15 事件统一封装；侧边栏橙色统一 |
 | v0.2.98 | 2026-09-28 | 库存预警模块完整闭环（单个/批量/智能推荐安全库存+自动通知）；营销活动效果数据回流与 ROI 分析；BISU 污染全面审计 |
 | v0.2.97 | 2026-09-28 | 新增库存盘点管理与客户画像管理页面；消除重复平台连接器 API；通知中心 3 新事件；客户画像→精准营销触达闭环 |
