@@ -22,6 +22,41 @@
 
 电商企业全员——从老板的经营决策、运营的业务执行，到 HR 的人事管理、一线员工的考勤审批与任务协同，一套系统覆盖全岗位场景，让每个人的工作高效协同、每份贡献可衡量。
 
+## v0.2.103 更新日志
+
+### UI 对齐高保真原型
+- 导航栏严格重构为 7 分组：工作台 / 智能助手 / 业务闭环 / 行业场景 / 组织管理 / 配套能力 / 系统
+- 智能助手从单菜单项升级为 4 子项：蜂群协作 / 记忆进化·智能洞察 / Agent 配置 / 对话工作流，通过 ?tab= 参数区分高亮
+- 移除所有页面顶部的「需求依据」横幅组件，界面更简洁
+- 移除所有 NEW / RSI 徽章，导航更纯净
+
+### 排班→考勤自动联动
+- 排班发布/变更后自动写入考勤记录（状态=已排班），HR 无需手工同步
+- 考勤模块读取 employee_schedules 作为预期出勤基准
+- 排班变更时同步更新关联考勤记录
+
+### 招聘全链路闭环
+- 招聘后段前端接线补全：面试安排 / Offer 管理 / 入职办理全部接通后端真实 API
+- 招聘漏斗可视化：职位→候选人→面试→Offer→入职转化率全链路展示
+- 入职办理触发自动建员工档案
+
+### 业务流持久化
+- 调薪建议 / 离职申请 / 权限回收 / 招聘预算 4 套后端 CRUD 端点
+- 前端 businessFlowStore 从「本地草稿态」升级为真实持久化，跨模块业务流可沉淀可追溯
+
+### 审批流统一
+- 新增统一待办中心页面，聚合所有待审批事项
+- 核心审批流接入 workflow 引擎，审批通过后回调各模块执行状态变更
+
+### 核心业务埋点补全
+- 算薪 / 排班 / 招聘 / 直播绩效 / 培训 5 大核心业务流程埋点
+- 统一埋点格式（business_event 分类、小写点分隔命名、try/catch 容错）
+
+### 稳定性
+- 前后端编译零错误
+- 全面修复版本漂移问题（下载链接 / curl 命令 / README 版本号统一）
+- 深度审查发现的问题全部修复
+
 ## v0.2.102 更新日志
 
 ### 招聘全链路闭环
@@ -262,7 +297,7 @@
 
 点击下方链接下载安装包：
 
-**[Vorzai 0.2.99 Setup.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.99/Vorzai-0.2.99-Setup.exe)**
+**[Vorzai 0.2.103 Setup.exe](https://github.com/kule-2025/vorzai-public/releases/download/v0.2.103/Vorzai-0.2.103-Setup.exe)**
 
 - 文件大小：约 86 MB
 - 系统要求：Windows 10/11 (x64)
@@ -291,10 +326,10 @@
 **方法 3：命令行下载**
 ```bash
 # 使用 curl（支持断点续传）
-curl -L -C - -o Vorzai-0.2.99-Setup.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.99/Vorzai-0.2.99-Setup.exe"
+curl -L -C - -o Vorzai-0.2.103-Setup.exe "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.103/Vorzai-0.2.103-Setup.exe"
 
 # 或使用 wget
-wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.99/Vorzai-0.2.99-Setup.exe"
+wget -c "https://github.com/kule-2025/vorzai-public/releases/download/v0.2.103/Vorzai-0.2.103-Setup.exe"
 ```
 
 **方法 4：GitHub 加速镜像**
