@@ -1,8 +1,8 @@
-version: 0.2.106
+version: 0.2.107
 files:
-  - url: Vorzai-0.2.106-Setup.exe
-    sha512: /XYG9bIW+tXrhJy7oSISGUtX+ziYTFCAt8p/OmbMSIQWjAyau0qzrjz3VagcQfhEujh1w2Nwbz/D4/0uu+yL6A==
-    size: 90402660
-path: Vorzai-0.2.106-Setup.exe
-sha512: /XYG9bIW+tXrhJy7oSISGUtX+ziYTFCAt8p/OmbMSIQWjAyau0qzrjz3VagcQfhEujh1w2Nwbz/D4/0uu+yL6A==
-releaseDate: '2026-10-04T14:31:37.032Z'
+  - url: Vorzai-0.2.107-Setup.exe
+    sha512: SE+LnVrjIPOIc6FKmeac97LYh7vPAzvpKbAFsGBtoNarXYh5Ok29jcOYdJjYBf9T4SBUbaAzlL/kIz5mauxBAg==
+    size: 89760594
+path: Vorzai-0.2.107-Setup.exe
+sha512: SE+LnVrjIPOIc6FKmeac97LYh7vPAzvpKbAFsGBtoNarXYh5Ok29jcOYdJjYBf9T4SBUbaAzlL/kIz5mauxBAg==
+releaseDate: '2026-10-05T11:06:12.252Z'
